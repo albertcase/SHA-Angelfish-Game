@@ -12,6 +12,11 @@ class SiteController extends Controller
 		$this->render('index');
 	}
 
+	public function actionGame()
+	{
+		$this->render('game');
+	}
+
 	public function actionSpring()
 	{
 		$this->render('spring');

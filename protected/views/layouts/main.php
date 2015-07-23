@@ -1,7 +1,6 @@
-<!DOCTYPE HTML>
 <html>
 <head>
-	<title>Urban Decay</title>
+	<title>ANGELFISH</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="format-detection" content="telephone=no">
 	<!--禁用手机号码链接(for iPhone)-->
@@ -12,12 +11,22 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="Keywords" content="">
 	<meta name="Description" content="...">
-
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/UD/reset.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/UD/style.css" />
+	<link rel=”shortcut icon” href=”/favicon.ico” />   
+	<link rel="stylesheet" type="text/css" href="/angelfish/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/angelfish/css/style.css" />
+	<script type="text/javascript" src="/angelfish/js/PxLoader.js"></script>
+	<script type="text/javascript" src="/angelfish/js/TweenMax.min.js"></script>
 </head>
 <body>
 	<?php echo $content; ?>
+
+	<!-- 横屏代码 -->
+	<div id="orientLayer" class="mod-orient-layer">
+	    <div class="mod-orient-layer__content">
+	        <i class="icon mod-orient-layer__icon-orient"></i>
+	        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+	    </div>
+	</div>
 </body>
 </html>
 

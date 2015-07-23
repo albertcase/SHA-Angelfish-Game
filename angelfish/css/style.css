@@ -1,0 +1,260 @@
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	text-align:center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #323232;
+}
+
+/* 字体样式 */
+
+@font-face {
+ font-family: 'digiface';
+ src: url('../fonts/digiface.TTF');
+}  
+
+@font-face {
+ font-family: 'HelveticaNeue';
+ src: url('../fonts/HelveticaNeueLTPro-XBlkCn.otf');
+}  
+
+#loading{
+	width: 0;
+	height: 100px;
+	line-height: 100px;
+	position: absolute;
+	left:0;
+	top:50%;
+	margin: -50px 0 0 0;
+	background: #fff; 
+	font-size: 16px;
+	color: #fff;
+	opacity: 0;
+}
+
+
+
+#dramebox{
+	opacity: 0;
+}
+
+#canvas{
+	margin:0 auto;
+}
+#start{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50%;
+	height: 60px;
+	line-height: 60px;
+	background: rgba(0,0,0,0.8);
+	z-index: 99;
+	color: #fff;
+	font-size: 18px;
+	text-transform: capitalize;
+	display: none;
+}
+
+#replay{
+	width: 40%;
+	font-size: 16px;
+	color: #fff;
+	background: #060606;
+	position: absolute;
+	left: 50%;
+	top:57%;
+	margin: 0 0 0 -20%;
+	padding: 10px 0;
+	display: none;
+}
+
+.container{
+	width: 100%;
+	position: relative;
+}
+
+.menu{
+	width: 40%;
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	margin: 0 0 0 -20%;
+}
+
+.startP-2{
+	margin: -0.2em 0 0 0;
+	display: inline-block;
+}
+
+.ball1{
+	width: 39%;
+	position: absolute;
+	left: -5em;
+  	top: 3em;
+}
+
+.ball2{
+	width: 42%;
+	position: absolute;
+	right: -5em;
+  	top: -3em;
+}
+
+.rule_link{
+	width: 36%;
+	position: absolute;
+	right: 0.5em;
+	bottom: 0.6em;
+}
+
+
+
+
+/* 动画代码 */
+
+/*.ball1 { 
+  	-webkit-animation: ballani 0.8s linear;
+    -moz-animation: ballani 0.8s linear;
+    animation: ballani 0.8s linear;
+}
+.ball2 { 
+  	-webkit-animation: ballani2 1.2s linear;
+    -moz-animation: ballani2 1.2s linear;
+    animation: ballani2 1.2s linear;
+}
+
+@-webkit-keyframes ballani {
+ 	0%,30% {opacity: 0; -webkit-transform: translate(30px,-50px); }
+  	60% {opacity: 0.5; -webkit-transform: translate(20px,-10px);}
+ 	100% {opacity: 1; -webkit-transform: translate(0,0);}
+}
+@-moz-keyframes ballani {
+	0%,30% {opacity: 0; -webkit-transform: translate(30px,-50px);}
+  	60% {opacity: 0.5; -webkit-transform: translate(20px,-10px);}
+  	100% {opacity: 1; -webkit-transform: translate(0,0);}
+}
+@keyframes ballani {
+  	0%,30% {opacity: 0; -webkit-transform: translate(30px,-50px);}
+  	60% {opacity: 0.5; -webkit-transform: translate(20px,-10px);}
+  	100% {opacity: 1; -webkit-transform: translate(0,0);}
+}
+
+@-webkit-keyframes ballani2 {
+ 	0%,30% {opacity: 0; -webkit-transform: translate(-30px,-50px); }
+  	60% {opacity: 0.5; -webkit-transform: translate(-20px,-10px);}
+ 	100% {opacity: 1; -webkit-transform: translate(0,0);}
+}
+@-moz-keyframes ballani {
+	0%,30% {opacity: 0; -webkit-transform: translate(-30px,-50px);}
+  	60% {opacity: 0.5; -webkit-transform: translate(-20px,-10px);}
+  	100% {opacity: 1; -webkit-transform: translate(0,0);}
+}
+@keyframes ballani {
+  	0%,30% {opacity: 0; -webkit-transform: translate(-30px,-50px);}
+  	60% {opacity: 0.5; -webkit-transform: translate(-20px,-10px);}
+  	100% {opacity: 1; -webkit-transform: translate(0,0);}
+}
+*/
+
+
+
+
+
+
+/* 横屏显示代码 */
+
+@-webkit-keyframes rotation {
+    10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    50%, 60% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    90% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    100% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+}
+@keyframes rotation {
+    10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    50%, 60% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    90% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    100% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+}
+
+#orientLayer { 
+	display: none; 
+}
+
+@media screen and (min-aspect-ratio: 13/9) { 
+    #orientLayer { 
+    	display: block; 
+    } 
+}
+.mod-orient-layer { 
+	display: none; 
+	position: fixed; 
+	height: 100%; 
+	width: 100%; 
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	background: #000; 
+	z-index: 9997;
+}
+.mod-orient-layer__content { 
+	position: absolute; 
+	width: 100%; 
+	top: 45%; 
+	margin-top: -75px; 
+	text-align: center;
+}
+.mod-orient-layer__icon-orient {
+	background-image: url('../imgs/h.png');
+	display: inline-block; 
+	width: 67px; 
+	height: 109px;
+    transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg); 
+    -webkit-animation: rotation infinite 1.5s ease-in-out; 
+    animation: rotation infinite 1.5s ease-in-out; 
+    -webkit-background-size: 67px; 
+    background-size: 67px;
+}
+.mod-orient-layer__desc { 
+	margin-top: 20px; 
+	font-size: 15px; 
+	color: #fff;
+}
+
+
+
+
+
+/* 6plus */
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+	.ball1{
+		left: -7em;
+	}
+
+	.ball2{
+		right: -6em;
+	}
+}
+
+/* 6 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 410px) and (orientation: portrait) {
+	.ball1{
+		left: -6em;
+	}
+
+	.ball2{
+		right: -6em;
+	}
+}
+
+
+
+
+
