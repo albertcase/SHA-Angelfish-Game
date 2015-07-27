@@ -12,8 +12,12 @@ class SiteController extends Controller
 		$this->render('index');
 	}
 
-	public function actionGame()
+	public function actionGame($type)
 	{
+		if(!isset($_SESSION['weixin_info_id'])){
+			Header('Location: /weixin/oauth?callback=/site/game/type/'.$type);
+			Yii::app()->end();
+		}
 		$this->render('game');
 	}
 

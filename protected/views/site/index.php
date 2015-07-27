@@ -10,10 +10,10 @@
 			<div class="ball2">
 				<img src="/angelfish/imgs/ball2.png" width="100%" />
 			</div>
-			<a href="/site/game" class="startP-1" title="个人赛">
+			<a href="/site/game/type/1" class="startP-1" title="个人赛">
 				<img src="/angelfish/imgs/1p.png" width="100%" />
 			</a>
-			<a href="/site/game" class="startP-2" title="双打赛">
+			<a href="/site/game/type/2" class="startP-2" title="双打赛">
 				<img src="/angelfish/imgs/2p.png" width="100%" />
 			</a>
 		</div>

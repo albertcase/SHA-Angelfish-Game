@@ -2,9 +2,9 @@
 
 class Weixin{
 
-	private $_TOKEN = 'chloewechat';
-	private $_appid = 'wxd506f9846b906bbc';
-	private $_secret = '795ab96e661510dcf639f99534395225';
+	private $_TOKEN = 'samesame';
+	private $_appid = 'wxeb57276615f0d9f1';
+	private $_secret = '42ac444f36a854b3dc3c66bdc59c98cc';
 	private $_eventKey = array('A1','B1','C1','C2','B2','B4','A2');
 	private $_db = null;
 	private $_fromUsername = null;
