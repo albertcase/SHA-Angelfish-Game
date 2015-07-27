@@ -1,6 +1,5 @@
 
 
-
 function writeTextOnCanvas(ctx, lh, rw, text, text_x, text_y){  // rw 字符长度
 	var lineheight = lh; //行高
 
@@ -59,13 +58,13 @@ fish2 = new Image(),
 fish3 = new Image(),
 fish4 = new Image(),
 fish5 = new Image(),
-wine0 = new Image();
-wine1 = new Image();
-wine2 = new Image();
-wine3 = new Image();
-wine4 = new Image();
-wine5 = new Image();
-wine6 = new Image();
+wine0 = new Image(),
+wine1 = new Image(),
+wine2 = new Image(),
+wine3 = new Image(),
+wine4 = new Image(),
+wine5 = new Image(),
+wine6 = new Image(),
 wine7 = new Image();
 
 ball.src = "/angelfish/imgs/gift/ball.png";
@@ -97,35 +96,35 @@ fish5.value = -15;
 fish5.speed = 5;
 
 wine0.src = "/angelfish/imgs/gift/wine1.png";
-wine0.value = 0;
+wine0.value = 50;
 wine0.speed = 7;
 
 wine1.src = "/angelfish/imgs/gift/wine2.png";
-wine1.value = 0;
+wine1.value = 50;
 wine1.speed = 7;
 
 wine2.src = "/angelfish/imgs/gift/wine3.png";
-wine2.value = 0;
+wine2.value = 50;
 wine2.speed = 7;
 
 wine3.src = "/angelfish/imgs/gift/wine4.png";
-wine3.value = 0;
+wine3.value = 50;
 wine3.speed = 7;
 
 wine4.src = "/angelfish/imgs/gift/wine5.png";
-wine4.value = 0;
+wine4.value = 50;
 wine4.speed = 7;
 
 wine5.src = "/angelfish/imgs/gift/wine6.png";
-wine5.value = 0;
+wine5.value = 50;
 wine5.speed = 7;
 
 wine6.src = "/angelfish/imgs/gift/wine7.png";
-wine6.value = 0;
+wine6.value = 50;
 wine6.speed = 7;
 
 wine7.src = "/angelfish/imgs/gift/wine8.png";
-wine7.value = 0;
+wine7.value = 50;
 wine7.speed = 7;
 
 
@@ -294,11 +293,11 @@ var App = {
 			var creatImgNum;   // 1为 80%; 2为18%; 0为2%;  0:球，1:鱼，2:酒
 			var img;
 			var imgRandom;
-			if(probability <= 82){
+			if(probability <= 86){
 				creatImgNum = 0;
 				imgRandom = parseInt(0*Math.random());
 				img = me.imgs.ball[imgRandom];
-			}else if(probability > 82 && probability <= 90){
+			}else if(probability > 86 && probability <= 96){
 				creatImgNum = 1;
 				imgRandom = parseInt(5*Math.random());
 				img = me.imgs.fish[imgRandom];
@@ -423,12 +422,12 @@ var App = {
 }
 
 window.onload = function (){  // 进入默认状态
-	var can = $("canvas");
+	var can = _g("canvas");
 	canvasWidth = window.document.body.clientWidth,
 	canvasHeight = window.document.body.clientHeight,
 	can.width = canvasWidth;
 	can.height = canvasHeight;
-	var ctx = $("canvas").getContext("2d");
+	var ctx = _g("canvas").getContext("2d");
 	ctx.drawImage(bg,0,0,canvasWidth,canvasHeight);
 
 	ctx.drawImage(heroImg,(can.width - heroImg.width)/2,can.height - heroImg.height); //绘制笑脸
@@ -496,7 +495,7 @@ window.onload = function (){  // 进入默认状态
 
 
 
-function $(id){
+function _g(id){
 	return document.getElementById(id);
 }
 
@@ -557,10 +556,46 @@ function loadingEnd(){
         z: 0,
         ease: Elastic.easeOut,
         easeParams: [0.2, 0.7],
-        force3D: false
+        force3D: false,
+        onComplete:function(){
+
+        	TweenMax.staggerFromTo(".scoreList",1,{
+        		scale:0,
+        		rotationY:0,
+        		rotationX:0,
+        		rotationZ:0,
+        		autoAlpha:0,
+        		opacity:0
+        	},{
+        		scale:1,
+        		rotationY:0,
+        		rotationX:0,
+        		rotationZ:0,
+        		autoAlpha:1,
+        		opacity:1,
+        		ease: Back.easeOut,
+        		onComplete:function(){
+        			TweenMax.staggerFromTo(".scoreList li",1,{
+		        		scale:1.2,
+		        		autoAlpha:0,
+		        		opacity:0
+		        	},{
+		        		scale:1,
+		        		autoAlpha:1,
+		        		opacity:1,
+		        		ease: Elastic.easeOut
+		        	},0.2)
+        		}
+        	},0.5)
+
+        	
+        }
     });
-	//startGame();
+
     console.log("加载完成!");
+
+    
+
 }
 
 
