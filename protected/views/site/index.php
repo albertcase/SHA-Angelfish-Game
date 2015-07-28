@@ -64,7 +64,7 @@ function submitTeamname(){
 	createTeam(createTeamname);
 }
 
-
+scoreList();
 
 $(".scoreList").show();
 TweenMax.staggerFromTo(".scoreList",1,{

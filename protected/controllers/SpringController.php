@@ -8,8 +8,10 @@ class SpringController extends Controller
 	 */
 	public $layout ="//layouts/spring";
 
-	public function actionIndex()
+	public function actionIndex($id)
 	{
+		$_SESSION['same_weixin_id']=intval($id);
+		exit;
 		$this->render('index');
 	}
 
