@@ -128,7 +128,7 @@ body{
 }
 
 .scoreList_title span,.scoreList li span{
-	width: 25%;
+	width: 33%;
 	display: inline-block;
 	text-align: center;
 	padding: 6px 0;
@@ -142,22 +142,11 @@ body{
 }
 
 .scoreList_title span:nth-child(2),.scoreList li span:nth-child(2){
+	width: 60%;
+}
+
+.scoreList_title span:nth-child(1),.scoreList_title span:nth-child(3),.scoreList li span:nth-child(1),.scoreList li span:nth-child(3){
 	width: 20%;
-}
-
-.scoreList_title span:nth-child(3),.scoreList_title span:nth-child(4),.scoreList li span:nth-child(3),.scoreList li span:nth-child(4){
-	width: 27.5%;
-}
-
-.scoreList li span:nth-child(1) img{
-	width: 40px;
-	height: 40px;
-	border-radius: 20px;
-	display: inline-block;
-	border: 1px #000 solid;
-	-moz-box-shadow:0px 1px 2px #000;               /* For Firefox3.6+ */
-	-webkit-box-shadow:0px 1px 2px #000;            /* For Chrome5+, Safari5+ */
-	box-shadow:0px 1px 2px #000;                    /* For Latest Opera */
 }
 
 .scoreList ul{
@@ -222,7 +211,7 @@ body{
 	width: 20%;
 	float: left;
 	display: inline-block;
-	font-family: digiface;
+	font-family: HelveticaNeue;
 }
 
 #finalScore p{

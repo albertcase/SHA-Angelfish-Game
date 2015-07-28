@@ -617,40 +617,7 @@ function loadingEnd(){
         z: 0,
         ease: Elastic.easeOut,
         easeParams: [0.2, 0.7],
-        force3D: false,
-        onComplete:function(){
-
-        	TweenMax.staggerFromTo(".scoreList",1,{
-        		scale:0,
-        		rotationY:0,
-        		rotationX:0,
-        		rotationZ:0,
-        		autoAlpha:0,
-        		opacity:0
-        	},{
-        		scale:1,
-        		rotationY:0,
-        		rotationX:0,
-        		rotationZ:0,
-        		autoAlpha:1,
-        		opacity:1,
-        		ease: Back.easeOut,
-        		onComplete:function(){
-        			TweenMax.staggerFromTo(".scoreList li",1,{
-		        		scale:1.2,
-		        		autoAlpha:0,
-		        		opacity:0
-		        	},{
-		        		scale:1,
-		        		autoAlpha:1,
-		        		opacity:1,
-		        		ease: Elastic.easeOut
-		        	},0.2)
-        		}
-        	},0.5)
-
-        	
-        }
+        force3D: false
     });
 
     console.log("加载完成!");
