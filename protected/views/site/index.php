@@ -1,14 +1,10 @@
 <div class="scoreList">
 	<div class="scoreList_title"><span>排名</span><span>玩家昵称</span><span>积分</span></div>
-	<ul>
-		<li><span>1</span><span>vic</span><span>100000</span></li>
-		<li><span>2</span><span>jack qiuith</span><span>90000</span></li>
-		<li><span>3</span><span>v</span><span>6000</span></li>
-		<li><span>4</span><span>愤怒的文子</span><span>2000</span></li>
-		<li><span>5</span><span>v</span><span>100000</span></li>
-		<li><span>6</span><span>v</span><span>90000</span></li>
-		<li><span>7</span><span>v</span><span>6000</span></li>
-		<li><span>8</span><span>v</span><span>2000</span></li>
+	<ul id="singleList">
+		<p>暂无数据</p>
+	</ul>
+	<ul id="doublesList">
+		<p>暂无数据</p>
 	</ul>
 </div>
 <article id="dramebox">
