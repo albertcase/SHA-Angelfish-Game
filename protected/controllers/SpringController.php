@@ -10,7 +10,7 @@ class SpringController extends Controller
 
 	public function actionIndex($id)
 	{
-		$_SESSION['same_weixin_id']=intval($id);
+		$_SESSION['weixin_info_id']=intval($id);
 		exit;
 		$this->render('index');
 	}
