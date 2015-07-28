@@ -1,4 +1,16 @@
-
+<div class="scoreList">
+	<div class="scoreList_title"><span>排名</span><span>玩家昵称</span><span>积分</span></div>
+	<ul>
+		<li><span>1</span><span>vic</span><span>100000</span></li>
+		<li><span>2</span><span>jack qiuith</span><span>90000</span></li>
+		<li><span>3</span><span>v</span><span>6000</span></li>
+		<li><span>4</span><span>愤怒的文子</span><span>2000</span></li>
+		<li><span>5</span><span>v</span><span>100000</span></li>
+		<li><span>6</span><span>v</span><span>90000</span></li>
+		<li><span>7</span><span>v</span><span>6000</span></li>
+		<li><span>8</span><span>v</span><span>2000</span></li>
+	</ul>
+</div>
 <article id="dramebox">
 	<div id="loading"></div>
 
@@ -34,23 +46,61 @@
 <script type="text/javascript">
 
 function teamCompetition(){
-	$("#createTeam").show();
-	TweenMax.staggerFromTo("#createTeam",1,{
-		scale:1.2,
-		autoAlpha:0,
-		opacity:0
-	},{
-		scale:1,
-		autoAlpha:1,
-		opacity:1,
-		ease: Elastic.easeOut
-	},0.2)
+	if($("body").attr("data-type") > 0){
+		window.location.href = "/site/game/type/2";
+	}else{
+		$("#createTeam").show();
+		TweenMax.staggerFromTo("#createTeam",1,{
+			scale:1.2,
+			autoAlpha:0,
+			opacity:0
+		},{
+			scale:1,
+			autoAlpha:1,
+			opacity:1,
+			ease: Elastic.easeOut
+		},0.2)
+	}
 }
 
 function submitTeamname(){
 	var createTeamname = $("#teamname").val();
 	createTeam(createTeamname);
 }
+
+
+
+$(".scoreList").show();
+TweenMax.staggerFromTo(".scoreList",1,{
+	scale:0,
+	rotationY:0,
+	rotationX:0,
+	rotationZ:0,
+	autoAlpha:0,
+	opacity:0
+},{
+	scale:1,
+	rotationY:0,
+	rotationX:0,
+	rotationZ:0,
+	autoAlpha:1,
+	opacity:1,
+	ease: Back.easeOut,
+	onComplete:function(){
+		TweenMax.staggerFromTo(".scoreList li",1,{
+    		scale:1.2,
+    		autoAlpha:0,
+    		opacity:0
+    	},{
+    		scale:1,
+    		autoAlpha:1,
+    		opacity:1,
+    		ease: Elastic.easeOut
+    	},0.2)
+	}
+},0.5)
+
+
 
 
 
