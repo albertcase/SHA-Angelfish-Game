@@ -46,14 +46,14 @@ class ApiController extends Controller
 			Yii::app()->end();
 		}
 
-		$sql = "SELECT id FROM `same_game_team` WHERE `teamname` = '". $teamname. "'";
+		$sql = "SELECT id FROM `same_game_team` WHERE `name` = '". $teamname. "'";
 		$rs = $db->createCommand($sql)->select()->queryScalar();
 		if ($rs) {
 			print json_encode(array('code' => 4, 'msg' => '战队名已存在'));
 			Yii::app()->end();
 		}
 
-		$sql = "INSERT INTO `same_game_team` SET `teamname` = '". $teamname. "', `uid` = '".
+		$sql = "INSERT INTO `same_game_team` SET `name` = '". $teamname. "', `uid` = '".
 		     intval($_SESSION['weixin_info_id']) ."'";
 		$db->createCommand($sql)->execute();
 		$id = $db->lastInsertId;
@@ -132,7 +132,7 @@ class ApiController extends Controller
 				break;
 			
 			case '2':
-				$sql = "SELECT uscore+fscore as score,teamname FROM `same_game_team` ORDER BY score DESC LIMIT 10";
+				$sql = "SELECT uscore+fscore as score,name FROM `same_game_team` ORDER BY score DESC LIMIT 10";
 				break;
 
 			default:
