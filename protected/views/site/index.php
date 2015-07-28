@@ -65,7 +65,8 @@ function submitTeamname(){
 }
 
 
-
+scoreList("1");
+scoreList("2");
 $(".scoreList").show();
 TweenMax.staggerFromTo(".scoreList",1,{
 	scale:0,
@@ -83,6 +84,7 @@ TweenMax.staggerFromTo(".scoreList",1,{
 	opacity:1,
 	ease: Back.easeOut,
 	onComplete:function(){
+		
 		TweenMax.staggerFromTo(".scoreList li",1,{
     		scale:1.2,
     		autoAlpha:0,
