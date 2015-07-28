@@ -188,7 +188,7 @@ class ApiController extends Controller
 				break;
 		}
 		
-		print json_encode(array('code' => 1, 'msg' => $scoreList, 'ranking'=>$num+1));
+		print json_encode(array('code' => 1, 'msg' => $scoreList, 'ranking'=> $num + 1, 'nickname' => $nickname));
 		Yii::app()->end();
 	}
 }
