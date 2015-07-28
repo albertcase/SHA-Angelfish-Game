@@ -15,7 +15,10 @@ class SpringController extends Controller
 
 	public function actionSpring()
 	{
-		$this->render('spring');
+		Yii::import('ext.emoji.emoji',true);
+		$name = json_decode('{"name":"Demon\ud83d\ude04"}',true);
+		$newname = emoji_unified_to_html($name['name']);
+		$this->render('spring',array('name'=>$newname));
 	}
 
 
