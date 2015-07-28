@@ -169,13 +169,17 @@ class ApiController extends Controller
 				$scoreList = $db->createCommand($sql)->select()->queryAll();
 				$sql = "SELECT count(*) FROM `same_weixin_info` WHERE score > (SELECT score FROM `same_weixin_info` WHERE id = '". intval($_SESSION['weixin_info_id']) ."')";
 				$num = $db->createCommand($sql)->select()->queryScalar();
+				$sql = "SELECT nickname FROM `same_weixin_info` WHERE id = '". intval($_SESSION['weixin_info_id']) ."'";
+				$nickname = $db->createCommand($sql)->select()->queryScalar();
 				break;
 			
 			case '2':
-				$sql = "SELECT uscore+fscore as score,name FROM `same_game_team` ORDER BY score DESC LIMIT 10";
+				$sql = "SELECT uscore+fscore as score,name as nickname FROM `same_game_team` ORDER BY score DESC LIMIT 10";
 				$scoreList = $db->createCommand($sql)->select()->queryAll();
 				$sql = "SELECT count(*) FROM `same_game_team` WHERE uscore+fscore > (SELECT uscore+fscore FROM `same_game_team` WHERE uid = '". intval($_SESSION['weixin_info_id']) ."' or fid = '". intval($_SESSION['weixin_info_id']) ."')";
 				$num = $db->createCommand($sql)->select()->queryScalar();
+				$sql = "SELECT name as nickname FROM `same_game_team` WHERE uid = '". intval($_SESSION['weixin_info_id']) ."' or fid = '". intval($_SESSION['weixin_info_id']) ."'";
+				$nickname = $db->createCommand($sql)->select()->queryScalar();
 				break;
 
 			default:
