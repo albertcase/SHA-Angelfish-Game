@@ -14,8 +14,11 @@
 	<link rel=”shortcut icon” href=”/favicon.ico” />   
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/style.css" />
+	<script type="text/javascript" src="/angelfish/js/jquery.js"></script>
 	<script type="text/javascript" src="/angelfish/js/PxLoader.js"></script>
 	<script type="text/javascript" src="/angelfish/js/TweenMax.min.js"></script>
+	<script type="text/javascript" src="/angelfish/js/interface.js"></script>
+	<script type="text/javascript" src="/angelfish/js/emoji.js"></script>
 </head>
 <body>
 	<?php echo $content; ?>
@@ -27,6 +30,7 @@
 	        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
 	    </div>
 	</div>
+
 </body>
 </html>
 

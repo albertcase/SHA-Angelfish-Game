@@ -1,3 +1,11 @@
+function getType(){
+	var str = window.location.pathname;
+	var pos = str.indexOf('type/');
+	return str.substring(pos+5,pos+6);
+}
+
+
+
 
 
 function writeTextOnCanvas(ctx, lh, rw, text, text_x, text_y){  // rw 字符长度
@@ -47,85 +55,95 @@ function writeTextOnCanvas(ctx, lh, rw, text, text_x, text_y){  // rw 字符长�
 
 
 
-var canvasWidth,canvasHeight,startEvent,countdownVal = 30,setTime,cdStatus = true,isover = false;
+var canvasWidth,
+	canvasHeight,
+	startEvent,
+	countdownVal = 30,
+	setTime,
+	cdStatus = true,
+	isover = false,
+	countDownNum = 4,
+	loadingInt,
+	curscore,
+	gameType;
 
 
 // 金币对像
 var ball = new Image(),
-fish0 = new Image(),
-fish1 = new Image(),
-fish2 = new Image(),
-fish3 = new Image(),
-fish4 = new Image(),
-fish5 = new Image(),
-wine0 = new Image(),
-wine1 = new Image(),
-wine2 = new Image(),
-wine3 = new Image(),
-wine4 = new Image(),
-wine5 = new Image(),
-wine6 = new Image(),
-wine7 = new Image();
+	fish0 = new Image(),
+	fish1 = new Image(),
+	fish2 = new Image(),
+	fish3 = new Image(),
+	fish4 = new Image(),
+	fish5 = new Image(),
+	wine0 = new Image(),
+	wine1 = new Image(),
+	wine2 = new Image(),
+	wine3 = new Image(),
+	wine4 = new Image(),
+	wine5 = new Image(),
+	wine6 = new Image(),
+	wine7 = new Image();
 
-ball.src = "/angelfish/imgs/gift/ball.png";
-ball.value = 15;
-ball.speed = 12;
+	ball.src = "/angelfish/imgs/gift/ball.png";
+	ball.value = 15;
+	ball.speed = 12;
 
-fish0.src = "/angelfish/imgs/gift/fish1.png";
-fish0.value = -15;
-fish0.speed = 5;
+	fish0.src = "/angelfish/imgs/gift/fish1.png";
+	fish0.value = -15;
+	fish0.speed = 5;
 
-fish1.src = "/angelfish/imgs/gift/fish2.png";
-fish1.value = -15;
-fish1.speed = 5;
+	fish1.src = "/angelfish/imgs/gift/fish2.png";
+	fish1.value = -15;
+	fish1.speed = 5;
 
-fish2.src = "/angelfish/imgs/gift/fish3.png";
-fish2.value = -15;
-fish2.speed = 5;
+	fish2.src = "/angelfish/imgs/gift/fish3.png";
+	fish2.value = -15;
+	fish2.speed = 5;
 
-fish3.src = "/angelfish/imgs/gift/fish4.png";
-fish3.value = -15;
-fish3.speed = 5;
+	fish3.src = "/angelfish/imgs/gift/fish4.png";
+	fish3.value = -15;
+	fish3.speed = 5;
 
-fish4.src = "/angelfish/imgs/gift/fish5.png";
-fish4.value = -15;
-fish4.speed = 5;
+	fish4.src = "/angelfish/imgs/gift/fish5.png";
+	fish4.value = -15;
+	fish4.speed = 5;
 
-fish5.src = "/angelfish/imgs/gift/fish6.png";
-fish5.value = -15;
-fish5.speed = 5;
+	fish5.src = "/angelfish/imgs/gift/fish6.png";
+	fish5.value = -15;
+	fish5.speed = 5;
 
-wine0.src = "/angelfish/imgs/gift/wine1.png";
-wine0.value = 50;
-wine0.speed = 7;
+	wine0.src = "/angelfish/imgs/gift/wine1.png";
+	wine0.value = 50;
+	wine0.speed = 7;
 
-wine1.src = "/angelfish/imgs/gift/wine2.png";
-wine1.value = 50;
-wine1.speed = 7;
+	wine1.src = "/angelfish/imgs/gift/wine2.png";
+	wine1.value = 50;
+	wine1.speed = 7;
 
-wine2.src = "/angelfish/imgs/gift/wine3.png";
-wine2.value = 50;
-wine2.speed = 7;
+	wine2.src = "/angelfish/imgs/gift/wine3.png";
+	wine2.value = 50;
+	wine2.speed = 7;
 
-wine3.src = "/angelfish/imgs/gift/wine4.png";
-wine3.value = 50;
-wine3.speed = 7;
+	wine3.src = "/angelfish/imgs/gift/wine4.png";
+	wine3.value = 50;
+	wine3.speed = 7;
 
-wine4.src = "/angelfish/imgs/gift/wine5.png";
-wine4.value = 50;
-wine4.speed = 7;
+	wine4.src = "/angelfish/imgs/gift/wine5.png";
+	wine4.value = 50;
+	wine4.speed = 7;
 
-wine5.src = "/angelfish/imgs/gift/wine6.png";
-wine5.value = 50;
-wine5.speed = 7;
+	wine5.src = "/angelfish/imgs/gift/wine6.png";
+	wine5.value = 50;
+	wine5.speed = 7;
 
-wine6.src = "/angelfish/imgs/gift/wine7.png";
-wine6.value = 50;
-wine6.speed = 7;
+	wine6.src = "/angelfish/imgs/gift/wine7.png";
+	wine6.value = 50;
+	wine6.speed = 7;
 
-wine7.src = "/angelfish/imgs/gift/wine8.png";
-wine7.value = 50;
-wine7.speed = 7;
+	wine7.src = "/angelfish/imgs/gift/wine8.png";
+	wine7.value = 50;
+	wine7.speed = 7;
 
 
 
@@ -211,6 +229,34 @@ var App = {
 		if(countdownVal<=0)return false;
 		countdownVal --;	
 	},
+	loadingCountdown: function(){
+		if(countDownNum=="GO"){
+			clearInterval(loadingInt);
+			TweenMax.to(".loading_countdown", 0.3, {
+		        scale:0.1,
+	    		autoAlpha:0,
+	    		opacity:0,
+	    		onComplete:function(){
+					App.gameStart("canvas",6);
+	    		}
+		    });
+			
+		}else{
+			countDownNum --;
+			countDownNum == 1?countDownNum="GO":countDownNum=countDownNum;
+			document.getElementById("loading_countdown").innerHTML = countDownNum;
+			TweenMax.staggerFromTo(".loading_countdown",1,{
+	    		scale:0.1,
+	    		autoAlpha:0,
+	    		opacity:0
+	    	},{
+	    		scale:1,
+	    		autoAlpha:1,
+	    		opacity:1,
+	    		ease: Elastic.easeOut
+	    	},1)
+		}
+	},
 	// 绘制对象
 	draw:function(){
 		// 清屏
@@ -243,7 +289,7 @@ var App = {
 
 		
 		var defaultScore = "00000"; 
-		var curscore = String(this.hero.grade);
+		curscore = String(this.hero.grade);
      	curscore = defaultScore.substring(0, defaultScore.length- curscore.length) + curscore; 
 
 		// this.context.fillText("Life: " + this.hero.life,16,27);
@@ -322,6 +368,7 @@ var App = {
 				me.addElement(money);
 			};				
 		}
+		
 		me.draw();
 
 		if(me.hero.life != 0 && me.hero.grade >= 30 && countdownVal == 0){
@@ -408,12 +455,33 @@ var App = {
 		this.context.fillStyle = "#b1ff26";
 		this.context.font = 'bold 27px Arial';
 
-		writeTextOnCanvas(this.context,40, 18, "          恭喜你! 获得 "+this.hero.grade+" 分", this.canvas.width/2, this.canvas.height/2 - 80);
+		//writeTextOnCanvas(this.context,40, 18, "          恭喜你! 获得 "+this.hero.grade+" 分", this.canvas.width/2, this.canvas.height/2 - 80);
 
 		clearInterval(setTime);
 		isover = true;
-		document.getElementById("replay").innerHTML = "再次挑战";
-		document.getElementById("replay").style.display = "block";
+		// document.getElementById("replay").innerHTML = "再次挑战";
+		// document.getElementById("replay").style.display = "block";
+
+
+		document.getElementById("finalScore").style.display = "block";
+		TweenMax.staggerFromTo("#finalScore",1,{
+    		scale:0.1,
+    		autoAlpha:0,
+    		opacity:0
+    	},{
+    		scale:1,
+    		autoAlpha:1,
+    		opacity:1,
+    		ease: Elastic.easeOut
+    	},1)
+
+    	$("#finalScore li").each(function(k){
+    		$(this).html(curscore[k]);
+    	})
+
+		$("#submitBtn").click(function(){
+			submitScore(gameType,curscore);
+		})
 	},
 	// 添加对象
 	addElement:function(o){
@@ -422,6 +490,9 @@ var App = {
 }
 
 window.onload = function (){  // 进入默认状态
+
+	gameType = getType();
+
 	var can = _g("canvas");
 	canvasWidth = window.document.body.clientWidth,
 	canvasHeight = window.document.body.clientHeight,
@@ -436,7 +507,7 @@ window.onload = function (){  // 进入默认状态
 	ctx.font = 'bold 27px Arial';
 	//ctx.fillText("Press click screen to start...",can.width/2,can.height/2);
 
-	writeTextOnCanvas(ctx, 40, 18, "         点击屏幕   开始你的挑战", can.width/2, can.height/2 - 80);
+	//writeTextOnCanvas(ctx, 40, 18, "         点击屏幕   开始你的挑战", can.width/2, can.height/2 - 80);
 	
 	// 绘制生命值及得分
 	ctx.drawImage(score,3,-8,can.width*0.6,50);
@@ -462,32 +533,18 @@ window.onload = function (){  // 进入默认状态
 	ctx.fillText("00",can.width*0.905,27);
 
 
-	// startEvent = document.getElementById("start");
-	// startEvent.onclick = function(){
-	// 	if(App.timer == null){
-	// 		App.gameStart("canvas",6);
-	// 	}else if(App.pause){
-	// 		App.pause = false;
-	// 	}else{
-	// 		App.gamePause("canvas",6);
-	// 	}
-	// 	//startEvent.style.display="none";
-	// }
-
 	can.ontouchstart = function(event){
 
 		//阻止网页默认动作（即网页滚动）
 	    event.preventDefault();
-		if(event.touches[0].pageY >= can.height-can.height*0.4 || isover)return false;
-		if(App.timer == null){
-			App.gameStart("canvas",6);
-		}else if(App.pause){
-			App.pause = false;
-		}else{
-			App.gamePause("canvas",6);
+		//if(event.touches[0].pageY >= can.height-can.height*0.4 || isover)return false;
+		if(App.timer == null && countDownNum >=4){
+			document.getElementById("loading_countdown").style.display = "block";
+			loadingInt = setInterval("App.loadingCountdown()",1000)
 		}
-
+		
 	}
+
 }
 
 
@@ -508,6 +565,10 @@ var orientation=0;
 function screenOrientationEvent(){
     if(orientation != 0 && !isover){
 		App.gamePause("canvas",6);
+	}else if(App.pause){
+		App.pause = false;
+	}else{
+		App.gameStart("canvas",6);
 	}
 }
 var innerWidthTmp = window.innerWidth;
@@ -532,14 +593,14 @@ function screenOrientationListener(){
 
 
 function loadingEnd(){
-	TweenMax.fromTo(document.querySelector('#dramebox'), 1.6, {
+	TweenMax.fromTo(document.querySelector('#dramebox'), 0.6, {
         x: -10,
         y:-100,
         z:200,
         rotationY:0,
         rotationX:"-90",
         rotationZ:0,
-        scale:16,
+        scale:8,
         autoAlpha:0,
         blurFilter:{blurX:50, blurY:10},
         opacity:0

@@ -60,19 +60,6 @@ body{
 	display: none;
 }
 
-#replay{
-	width: 40%;
-	font-size: 16px;
-	color: #fff;
-	background: #060606;
-	position: absolute;
-	left: 50%;
-	top:57%;
-	margin: 0 0 0 -20%;
-	padding: 10px 0;
-	display: none;
-}
-
 .container{
 	width: 100%;
 	position: relative;
@@ -130,6 +117,7 @@ body{
 	z-index: 9;
 	text-align: center;
 	opacity: 0;
+	display: none;
 }
 
 .scoreList_title{
@@ -190,6 +178,89 @@ body{
 }
 
 
+/* 3秒倒计时 */
+.loading_countdown{
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10;
+	font-size: 120px;
+	color: #fff;
+	margin: -80px 0 0 -50%;
+	opacity: 0;
+	text-align: center;
+	display: none;
+}
+
+
+/* 最终得分 */
+#finalScore{
+	width: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10;
+	font-size: 30px;
+	color: #000;
+	margin: -80px 0 0 -40%;
+	opacity: 0;
+	text-align: center;
+	background: rgba(255,255,255,0.8);
+	padding: 30px 0;
+	display: none;
+}
+
+#finalScore ul{
+	padding: 20px 0;
+	width: 40%;
+	display: inline-block;
+}
+
+#finalScore li{
+	width: 20%;
+	float: left;
+	display: inline-block;
+	font-family: digiface;
+}
+
+#finalScore p{
+	width: 100%;
+}
+
+#replay,#submitBtn,#findPartner{
+	width: 40%;
+	font-size: 16px;
+	color: #fff;
+	background: #060606;
+	padding: 10px 0;
+	display: inline-block;
+}
+
+
+/* 创建队名 */
+#createTeam{
+	width: 70%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -160px 0 0 -35%;
+	z-index: 9;
+	font-size: 30px;
+	background: rgba(255,255,255,0.8);
+	padding: 20px;
+	text-align: center;
+	line-height: 38px;
+	display: none;
+	opacity: 0;
+}
+
+#createTeam input{
+	width: 90%;
+	display: inline-block;
+	margin: 10px 0; 
+}
 
 
 

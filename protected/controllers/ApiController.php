@@ -69,7 +69,7 @@ class ApiController extends Controller
 		}
 
 		$tag = false;
-		$score = isset($_POST['score']) ? $_POST['score'] : $tag = true;
+		$score = isset($_POST['score']) ? intval($_POST['score']) : $tag = true;
 		if ($tag) {
 			print json_encode(array('code' => 2, 'msg' => '参数错误'));
 			Yii::app()->end();
@@ -79,7 +79,7 @@ class ApiController extends Controller
 			case '1':
 				$sql = "SELECT score FROM `same_weixin_info` WHERE id = '". intval($_SESSION['weixin_info_id']) ."'";
 				$uscore = $db->createCommand($sql)->select()->queryScalar();
-				if ($score > $uscroe) {
+				if ($score > $uscore) {
 					$sql = "UPDATE `same_weixin_info` SET score = :score where id = :id";
 					$command = $db->createCommand($sql);
 					$command->bindParam(':id', $_SESSION['weixin_info_id'], PDO::PARAM_INT);
@@ -101,7 +101,7 @@ class ApiController extends Controller
 					$uscore = $team['fscore'];
 				}
 
-				if ($score > $uscroe) {
+				if ($score > $uscore) {
 					if ($team['uid'] == $_SESSION['weixin_info_id']) {
 						$sql = "UPDATE `same_game_team` SET uscore = :score where id = :id";
 					} else {
