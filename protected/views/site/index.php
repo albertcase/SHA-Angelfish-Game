@@ -6,6 +6,8 @@
 	<ul id="doublesList">
 		<p>暂无数据</p>
 	</ul>
+
+	<div class="scoreArr">></div>
 </div>
 <article id="dramebox">
 	<div id="loading"></div>
@@ -84,7 +86,7 @@ TweenMax.staggerFromTo(".scoreList",1,{
 	opacity:1,
 	ease: Back.easeOut,
 	onComplete:function(){
-		
+		$("#singleList").show();
 		TweenMax.staggerFromTo(".scoreList li",1,{
     		scale:1.2,
     		autoAlpha:0,

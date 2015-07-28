@@ -154,6 +154,8 @@ body{
 	display: inline-block;
 	height: 80%;
 	overflow: auto;
+	display: none;
+	margin: 0 0 0 5%;
 }
 
 .scoreList li{
@@ -166,6 +168,16 @@ body{
 	border-bottom: 1px #000 solid;
 }
 
+.scoreArr{
+	font-size: 30px;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin: -50px 0 0 -50px;
+	z-index: 99;
+}
 
 /* 3秒倒计时 */
 .loading_countdown{
