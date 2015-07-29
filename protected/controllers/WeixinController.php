@@ -94,6 +94,13 @@ class WeixinController extends Controller
 		return $result;
 	}
 
+	public function actionJssdk($url)
+	{
+		$wechatObj = new Weixin();
+		echo $url=$wechatObj->getJsSDK($url);
+		Yii::app()->end();
+	}
+
 	public function actionOauth($callback)
 	{
 		$_SESSION['callback_url']=$callback;
