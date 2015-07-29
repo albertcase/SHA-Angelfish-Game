@@ -7,8 +7,12 @@
 		<p>暂无数据</p>
 	</ul>
 
-	<div class="scoreArr_l"><</div>
-	<div class="scoreArr_r">></div>
+	<div class="scoreArr_l">
+		<img src="/angelfish/imgs/arr_l.png" width="100%" />
+	</div>
+	<div class="scoreArr_r">
+		<img src="/angelfish/imgs/arr_r.png" width="100%" />
+	</div>
 </div>
 
 <div id="rule">
