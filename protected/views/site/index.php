@@ -7,15 +7,26 @@
 		<p>暂无数据</p>
 	</ul>
 
-	<div class="scoreArr">></div>
+	<div class="scoreArr_l"><</div>
+	<div class="scoreArr_r">></div>
 </div>
+
+<div id="rule">
+	<img src="/angelfish/imgs/rule.jpg" width="100%" />
+	<a href="javascript:;" class="back">
+		<img src="/angelfish/imgs/backBtn.png" width="100%" />
+	</a>
+</div>
+
 <article id="dramebox">
 	<div id="loading"></div>
 
 	<div id="createTeam">
-		<h2>给自己的团队起一个气势如虹的队名吧</h2>
-		<input type="text" maxlength="10" name="teamname" id="teamname">
-		<p><a href="javascript:submitTeamname();" id="findPartner">找队友</a></p>
+		<img src="/angelfish/imgs/createTeam.png" width="100%" />
+		<div class="createTeam_con">
+			<input type="text" maxlength="10" placeholder="团队的名称有十个汉字" name="teamname" id="teamname">
+			<p><a href="javascript:submitTeamname();" id="findPartner"><img src="/angelfish/imgs/findBtn.png" width="100%" /></a></p>
+		</div>
 	</div>
 
 	<section class="container">
@@ -35,6 +46,9 @@
 			</a>
 		</div>
 
+		<a href="javascript:playersRanking();" class="playersRanking_link">
+			<img src="/angelfish/imgs/playersRanking.png" width="100%" />
+		</a>
 		<a href="javascript:;" class="rule_link">
 			<img src="/angelfish/imgs/rule_text.png" width="100%" />
 		</a>
@@ -69,39 +83,141 @@ function submitTeamname(){
 
 scoreList("1");
 scoreList("2");
-$(".scoreList").show();
-TweenMax.staggerFromTo(".scoreList",1,{
-	scale:0,
-	rotationY:0,
-	rotationX:0,
-	rotationZ:0,
-	autoAlpha:0,
-	opacity:0
-},{
-	scale:1,
-	rotationY:0,
-	rotationX:0,
-	rotationZ:0,
-	autoAlpha:1,
-	opacity:1,
-	ease: Back.easeOut,
-	onComplete:function(){
-		$("#singleList").show();
-		TweenMax.staggerFromTo(".scoreList li",1,{
-    		scale:1.2,
-    		autoAlpha:0,
-    		opacity:0
-    	},{
-    		scale:1,
-    		autoAlpha:1,
-    		opacity:1,
-    		ease: Elastic.easeOut
-    	},0.2)
-	}
-},0.5)
 
 
 
+function playersRanking(){
+	$(".scoreList").show();
+	TweenMax.staggerFromTo(".scoreList",1,{
+		scale:0,
+		rotationY:0,
+		rotationX:0,
+		rotationZ:0,
+		autoAlpha:0,
+		opacity:0
+	},{
+		scale:1,
+		rotationY:0,
+		rotationX:0,
+		rotationZ:0,
+		autoAlpha:1,
+		opacity:1,
+		ease: Back.easeOut,
+		onComplete:function(){
+			$("#singleList").css("display","inline-block");
+			TweenMax.staggerFromTo("#singleList li",0.8,{
+	    		scale:1.2,
+	    		autoAlpha:0,
+	    		opacity:0
+	    	},{
+	    		scale:1,
+	    		autoAlpha:1,
+	    		opacity:1,
+	    		ease: Elastic.easeOut
+	    	},0.2);
+
+		}
+	},0.5)
+}
+
+
+
+$(".scoreArr_r").click(function(){
+	$(this).hide();
+	TweenMax.to("#singleList", 0.3, {
+        x:-1000,
+		autoAlpha:0,
+		opacity:0,
+		onComplete:function(){
+			$("#singleList").css("display","none");
+			TweenMax.staggerFromTo("#doublesList",0.8,{
+				x:0,
+				autoAlpha:0,
+				opacity:0
+			},{
+				autoAlpha:1,
+				opacity:1,
+				onComplete:function(){
+					$("#doublesList").css("display","inline-block");
+					TweenMax.staggerFromTo("#doublesList li",0.8,{
+			    		scale:1.2,
+			    		autoAlpha:0,
+			    		opacity:0
+			    	},{
+			    		scale:1,
+			    		autoAlpha:1,
+			    		opacity:1,
+			    		ease: Elastic.easeOut
+			    	},0.2)
+			    	$(".scoreArr_l").show();
+				},
+				ease: Elastic.easeOut
+			},0.2)
+		}
+    });
+
+	
+})
+
+
+$(".scoreArr_l").click(function(){
+	$(this).hide();
+	TweenMax.to("#doublesList", 0.3, {
+        x:1000,
+		autoAlpha:0,
+		opacity:0,
+		onComplete:function(){
+			$("#doublesList").css("display","none");
+			
+			TweenMax.staggerFromTo("#singleList",0.8,{
+				x:0,
+				autoAlpha:0,
+				opacity:0
+			},{
+				autoAlpha:1,
+				opacity:1,
+				onComplete:function(){
+					$("#singleList").css("display","inline-block");
+					TweenMax.staggerFromTo("#singleList li",0.8,{
+			    		scale:1.2,
+			    		autoAlpha:0,
+			    		opacity:0
+			    	},{
+			    		scale:1,
+			    		autoAlpha:1,
+			    		opacity:1,
+			    		ease: Elastic.easeOut
+			    	},0.2)
+			    	$(".scoreArr_r").show();
+				},
+				ease: Elastic.easeOut
+			},0.2)
+		}
+    });
+
+	
+})
+
+/* rule */
+$(".back").click(function(){
+	TweenMax.to("#rule", 0.3, {
+        x:0,
+		autoAlpha:0,
+		opacity:0,
+		onComplete:function(){
+			$("#rule").hide();
+		}
+	})
+})
+
+$(".rule_link").click(function(){
+	$("#rule").show();
+	TweenMax.to("#rule", 0.3, {
+        x:0,
+		autoAlpha:1,
+		opacity:1
+	})
+})
 
 
 document.addEventListener('touchmove' , function (ev){

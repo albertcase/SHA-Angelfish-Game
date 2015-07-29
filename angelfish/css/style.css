@@ -92,15 +92,36 @@ body{
   	top: -3em;
 }
 
-.rule_link{
+.rule_link,.playersRanking_link{
 	width: 36%;
 	position: absolute;
 	right: 0.5em;
 	bottom: 0.6em;
 }
 
+.playersRanking_link{
+	left: 0.5em;
+}
 
 
+/* rule */
+#rule{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	opacity: 0;
+	display: none;
+}
+
+.back{
+	width: 30%;
+	position: absolute;
+	left: 50%;
+	bottom: 2.5em;
+	margin: 0 0 0 -15%;
+}
 
 
 
@@ -168,20 +189,28 @@ body{
 	border-bottom: 1px #000 solid;
 }
 
-.scoreArr{
+.scoreArr_l,.scoreArr_r{
 	font-size: 30px;
-	width: 100px;
+	width: 20px;
 	height: 100px;
+	line-height: 100px;
 	position: absolute;
 	right: 0;
 	top: 50%;
-	margin: -50px 0 0 -50px;
+	margin: -50px 0 0 0;
 	z-index: 99;
+	background: rgba(255,255,255,0.8);
+	color: #fff;
+}
+
+.scoreArr_l{
+	left: 0;
+	display: none;
 }
 
 /* 3秒倒计时 */
 .loading_countdown{
-	width: 100%;
+	width: 60%;
 	height: 100px;
 	position: absolute;
 	left: 50%;
@@ -189,34 +218,31 @@ body{
 	z-index: 10;
 	font-size: 120px;
 	color: #fff;
-	margin: -80px 0 0 -50%;
-	opacity: 0;
+	margin: -127px 0 0 -30%;
 	text-align: center;
+	opacity: 0;
 	display: none;
 }
 
 
 /* 最终得分 */
 #finalScore{
-	width: 80%;
+	width: 96%;
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	z-index: 10;
-	font-size: 30px;
-	color: #000;
-	margin: -80px 0 0 -40%;
-	opacity: 0;
+	margin: -270px 0 0 -48%;
 	text-align: center;
-	background: rgba(255,255,255,0.8);
-	padding: 30px 0;
-	display: none;
 }
 
 #finalScore ul{
 	padding: 20px 0;
-	width: 40%;
+	width: 60%;
 	display: inline-block;
+	position: absolute;
+	left: 20%;
+	top: 56%;
 }
 
 #finalScore li{
@@ -224,43 +250,149 @@ body{
 	float: left;
 	display: inline-block;
 	font-family: HelveticaNeue;
-}
-
-#finalScore p{
-	width: 100%;
-}
-
-#replay,#submitBtn,#findPartner{
-	width: 40%;
-	font-size: 16px;
+	font-size: 38px;
 	color: #fff;
-	background: #060606;
-	padding: 10px 0;
+}
+
+#telBtn{
+	width: 44%;
+	position: absolute;
+	left: 50%;
+	bottom: -25%;
+	margin: 0 0 0 -22%;
+}
+
+
+/* 您的最终排名 */
+#yourRank{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+.yourRank_con{
+	position: absolute;
+	left: 50%;
+	top: 67%;
+	width: 80%;
+	margin: 0 0 0 -40%;
+}
+
+#yourRank ul li{
+	position: relative;
+}
+
+.rankli{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	line-height: 100%;
+}
+
+.rankli > div{
+	float: left;
+	display: inline-block;
+	font-size: 18px;
+	color: #fff;
+}
+
+.rankli > div.rankGrade{
+	width: 20%;
+	margin: 4.1% 0 0 0;
+}
+
+.rankli > div.rankName{
+	width: 55%;
+	margin: 4.1% 0 0 0;
+}
+
+.rankli > div.rankScore{
+	width: 25%;
+	margin: 6% 0 0 0;
+	font-size: 12px;
+}
+
+#yourRank p{
+	width: 100%;
+	float: left;
 	display: inline-block;
 }
+
+.btnArea{
+	padding: 34% 0 0 0;
+	display: inline-block;
+}
+
+#attentionBtn,#replayBtn{
+	width: 50%;
+	display: inline-block;
+}
+
 
 
 /* 创建队名 */
 #createTeam{
-	width: 70%;
+	width: 86%;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin: -160px 0 0 -35%;
+	margin: -200px 0 0 -43%;
 	z-index: 9;
-	font-size: 30px;
-	background: rgba(255,255,255,0.8);
-	padding: 20px;
 	text-align: center;
-	line-height: 38px;
 	display: none;
 	opacity: 0;
 }
 
+.createTeam_con{
+	position: absolute;
+	width: 76%;
+	left: 50%;
+	top: 62%;
+	margin: 0 0 0 -39%;
+}
+
 #createTeam input{
 	width: 90%;
+	height: 27px;
+	line-height: 27px;
 	display: inline-block;
 	margin: 10px 0; 
+	background: #3e003b;
+	border: none; 
+	font-size: 1.3em;
+	text-align: center;
+	color: #fff;
+}
+
+#findPartner{
+	width: 56%;
+	display: inline-block;
+	margin: 40% 0 0 0;
+}
+
+
+
+/* 微信分享提示 */
+#wechat{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.7);
+	text-align: right;
+	display: none;
+}
+
+#wechat img{
+	width:38%;
+	display: inline-block;
+	margin: 3% 4% 0 0;
 }
 
 
