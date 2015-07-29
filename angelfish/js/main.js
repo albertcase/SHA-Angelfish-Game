@@ -230,7 +230,7 @@ var App = {
 		countdownVal --;	
 	},
 	loadingCountdown: function(){
-		if(countDownNum=="GO"){
+		if(countDownNum=="0"){
 			clearInterval(loadingInt);
 			TweenMax.to(".loading_countdown", 0.3, {
 		        scale:0.1,
@@ -243,8 +243,8 @@ var App = {
 			
 		}else{
 			countDownNum --;
-			countDownNum == 1?countDownNum="GO":countDownNum=countDownNum;
-			document.getElementById("loading_countdown").innerHTML = countDownNum;
+			//countDownNum == 1?countDownNum="0":countDownNum=countDownNum;
+			document.getElementById("loading_countdown").innerHTML = '<img src="/angelfish/imgs/'+countDownNum+'.png" width="100%" />';;
 			TweenMax.staggerFromTo(".loading_countdown",1,{
 	    		scale:0.1,
 	    		autoAlpha:0,
@@ -463,25 +463,27 @@ var App = {
 		// document.getElementById("replay").style.display = "block";
 
 
-		document.getElementById("finalScore").style.display = "block";
-		TweenMax.staggerFromTo("#finalScore",1,{
-    		scale:0.1,
-    		autoAlpha:0,
-    		opacity:0
-    	},{
-    		scale:1,
-    		autoAlpha:1,
-    		opacity:1,
-    		ease: Elastic.easeOut
-    	},1)
+		// document.getElementById("finalScore").style.display = "block";
+		// TweenMax.staggerFromTo("#finalScore",1,{
+  //   		scale:0.1,
+  //   		autoAlpha:0,
+  //   		opacity:0
+  //   	},{
+  //   		scale:1,
+  //   		autoAlpha:1,
+  //   		opacity:1,
+  //   		ease: Elastic.easeOut
+  //   	},1)
+	
+		window.location.href = "/site/result?fscore=" + curscore;
 
-    	$("#finalScore li").each(function(k){
-    		$(this).html(curscore[k]);
-    	})
+  //   	$("#finalScore li").each(function(k){
+  //   		$(this).html(curscore[k]);
+  //   	})
 
-		$("#submitBtn").click(function(){
-			submitScore(gameType,curscore);
-		})
+		// $("#submitBtn").click(function(){
+		// 	submitScore(gameType,curscore);
+		// })
 	},
 	// 添加对象
 	addElement:function(o){
