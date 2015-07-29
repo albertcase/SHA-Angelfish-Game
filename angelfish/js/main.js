@@ -463,17 +463,7 @@ var App = {
 		// document.getElementById("replay").style.display = "block";
 
 
-		// document.getElementById("finalScore").style.display = "block";
-		// TweenMax.staggerFromTo("#finalScore",1,{
-  //   		scale:0.1,
-  //   		autoAlpha:0,
-  //   		opacity:0
-  //   	},{
-  //   		scale:1,
-  //   		autoAlpha:1,
-  //   		opacity:1,
-  //   		ease: Elastic.easeOut
-  //   	},1)
+	
 	
 		window.location.href = "/site/result?fscore=" + curscore;
 

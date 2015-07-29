@@ -13,6 +13,7 @@
 	<meta name="Description" content="...">
 	<link rel=”shortcut icon” href=”/favicon.ico” />   
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/angelfish/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/style.css" />
 	<script type="text/javascript" src="/angelfish/js/jquery.js"></script>
 	<script type="text/javascript" src="/angelfish/js/PxLoader.js"></script>

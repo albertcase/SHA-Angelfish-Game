@@ -1,3 +1,5 @@
+<script type="text/javascript" src="/angelfish/js/swiper.min.js"></script>
+
 <div id="wechat">
 	<img src="/angelfish/imgs/wechat_tips.png" />
 </div>
@@ -5,25 +7,48 @@
 
 <article id="dramebox">
 	<img src="/angelfish/imgs/bg2.jpg" width="100%" />
-	<div id="yourRank">
-		<div class="yourRank_con">
-			<ul>
-				<li>
-					<div class="rankli">
-						<div class="rankGrade">1</div>
-						<div class="rankName">西瓜皮</div>
-						<div class="rankScore">999</div>
+
+	<div class="scoreList">
+		<!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">
+	            	<img src="/angelfish/imgs/single.png" class="scorebg singlebg" width="100%" />
+					<div class="scoreList_con">
+						<ul id="singleList">
+							<p>暂无数据</p>		
+						</ul>
+						<div class="owen single_owen"></div>	
 					</div>
-					<img src="/angelfish/imgs/libg.png" width="100%" />
-				<li>
-			</ul>
-			<div class="btnArea">
-				<p><a href="javascript:;" id="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
-				<p><a href="javascript:;" id="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
-			</div>
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="/angelfish/imgs/doubles.png" class="scorebg doublesbg" width="100%" />
+	            	<div class="scoreList_con">
+						<ul id="doublesList">
+							<p>暂无数据</p>
+						</ul>
+						<div class="owen doubles_owen"></div>		
+					</div>
+	            </div>
+	        </div>
+	        <!-- Add Arrows -->
+	        <div class="swiper-button-next">
+	        	<img src="/angelfish/imgs/arr_r.png" width="100%" />
+	        </div>
+	        <div class="swiper-button-prev">
+	        	<img src="/angelfish/imgs/arr_l.png" width="100%" />
+	        </div>
+	    </div>
+
+
+		<div class="btnArea">
+			<p><a href="javascript:;" id="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
+			<p><a href="javascript:;" id="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
 		</div>
-		<img src="/angelfish/imgs/yourRank.png" width="100%" />
+
+		
 	</div>
+
 	<div id="finalScore">
 		<img src="/angelfish/imgs/timesup.png" width="100%" />
 		<ul>
@@ -46,9 +71,27 @@
 
 	var  curscore = GetQueryString("fscore");
 
-   	$("#finalScore li").each(function(k){
-   		$(this).html(curscore[k]);
-   	})
+	if(!curscore){
+		$(".scoreList").show();
+		//playersRanking();
+	}else{
+
+		document.getElementById("finalScore").style.display = "block";
+		TweenMax.staggerFromTo("#finalScore",1,{
+			scale:0.1,
+			autoAlpha:0,
+			opacity:0
+		},{
+			scale:1,
+			autoAlpha:1,
+			opacity:1,
+			ease: Elastic.easeOut
+		},0.3)
+		$("#finalScore li").each(function(k){
+	   		$(this).html(curscore[k]);
+	   	})
+	}
+   	
 
    	$("#telBtn").click(function(){
    		$("#wechat").fadeIn();
@@ -94,6 +137,23 @@
 	}
 
 
-	loadingEnd()
+	loadingEnd();
+
+
+
+
+
+
+scoreList("1");
+scoreList("2");
+
+
+var swiper = new Swiper('.swiper-container', {
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    effect : 'cube'
+});
+
+
 
 </script>

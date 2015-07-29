@@ -101,14 +101,17 @@
     			//alert("未登录");
     		}else{
     			var scoreListHtml = $.map(data.msg,function(v,key){
- 					return "<li><span>"+parseInt(key+1)+"</span><span>"+v.nickname+"</span><span>"+v.score+"</span></li>";
+ 					return '<li><div class="rankli"><div class="rankGrade">'+parseInt(key+1)+'</div><div class="rankName">'+v.nickname+'</div><div class="rankScore">'+v.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" /></li>';
 				}).join(" ");
 
 				if(x == 1){
 					$("#singleList").html(scoreListHtml);
+					$(".single_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 				}else{
 					$("#doublesList").html(scoreListHtml);
+					$(".doubles_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 				}
+
     		}
 	    });
 	}

@@ -127,82 +127,95 @@ body{
 
 /* scorelist */
 .scoreList{
-	width: 90%;
-	height: 80%;
-	overflow: auto;
-	background: rgba(0,0,0,0.8);
-	position: fixed;
+	width: 82%;
+	position: absolute;
 	left: 50%;
-	top:10%;
-	margin: 0 0 0 -45%;
+	top:6%;
+	margin: 0 0 0 -41%;
 	z-index: 9;
 	text-align: center;
-	opacity: 0;
 	display: none;
 }
 
-.scoreList_title{
-	width: 90%;
-	display: inline-block;
-	padding: 20px 0 6px 0;
-	font-size: 14px;
-}
-
-.scoreList_title span,.scoreList li span{
-	width: 33%;
-	display: inline-block;
-	text-align: center;
-	padding: 6px 0;
-	color: #fff;
-}
-
-.scoreList li span{
-	padding: 1px 0 4px 0;
-	font-size: 12px;
-	font-family: arial;
-}
-
-.scoreList_title span:nth-child(2),.scoreList li span:nth-child(2){
-	width: 60%;
-}
-
-.scoreList_title span:nth-child(1),.scoreList_title span:nth-child(3),.scoreList li span:nth-child(1),.scoreList li span:nth-child(3){
-	width: 20%;
+.scoreList_con{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	overflow: hidden;
 }
 
 .scoreList ul{
-	width: 90%;
+	width: 86%;
 	display: inline-block;
-	height: 80%;
 	overflow: auto;
-	display: none;
-	margin: 0 0 0 5%;
+	margin: 19% 0 0 0;
 }
 
 .scoreList li{
 	width: 100%;
-	padding: 3px 0;
 	display: inline-block;
-	margin:2px 0; 
-	opacity: 0;
-	background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(0.9, #333));
-	border-bottom: 1px #000 solid;
+	position: relative;
 }
 
-.scoreArr_l,.scoreArr_r{
-	font-size: 30px;
-	width: 20px;
+.rankli{
+	width: 100%;
 	position: absolute;
-	right: 0;
-	top: 50%;
-	margin: -50px 0 0 0;
-	z-index: 99;
+	left: 0;
+	top: 0;
+	height: 100%;
+	line-height: 100%;
 }
 
-.scoreArr_l{
-	left: 0;
-	display: none;
+.rankli > div{
+	float: left;
+	display: inline-block;
+	font-size: 18px;
+	color: #fff;
 }
+
+.rankli > div.rankGrade{
+	width: 20%;
+	margin: 2.7% 0 0 0;
+	font-family: HelveticaNeue;
+}
+
+.rankli > div.rankName{
+	width: 55%;
+	margin: 2.7% 0 0 0;
+	font-size: 14px;
+}
+
+.rankli > div.rankScore{
+	width: 25%;
+	margin: 4% 0 0 0;
+	font-size: 12px;
+	font-family: HelveticaNeue;
+}
+
+
+.btnArea{
+	position: absolute;
+    left: 0;
+    bottom: -30%;
+}
+
+#attentionBtn,#replayBtn{
+	width: 50%;
+	display: inline-block;
+}
+
+.owen{
+	width: 86%;
+	height: 50px;
+	position: absolute;
+	left: 7%;
+    bottom: 5.6%;
+}
+
+
+
 
 /* 3秒倒计时 */
 .loading_countdown{
@@ -230,6 +243,7 @@ body{
 	z-index: 10;
 	margin: -270px 0 0 -48%;
 	text-align: center;
+	display: none;
 }
 
 #finalScore ul{
@@ -259,74 +273,7 @@ body{
 }
 
 
-/* 您的最终排名 */
-#yourRank{
-	width: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	display: none;
-}
 
-.yourRank_con{
-	position: absolute;
-	left: 50%;
-	top: 67%;
-	width: 80%;
-	margin: 0 0 0 -40%;
-}
-
-#yourRank ul li{
-	position: relative;
-}
-
-.rankli{
-	width: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	line-height: 100%;
-}
-
-.rankli > div{
-	float: left;
-	display: inline-block;
-	font-size: 18px;
-	color: #fff;
-}
-
-.rankli > div.rankGrade{
-	width: 20%;
-	margin: 4.1% 0 0 0;
-}
-
-.rankli > div.rankName{
-	width: 55%;
-	margin: 4.1% 0 0 0;
-}
-
-.rankli > div.rankScore{
-	width: 25%;
-	margin: 6% 0 0 0;
-	font-size: 12px;
-}
-
-#yourRank p{
-	width: 100%;
-	float: left;
-	display: inline-block;
-}
-
-.btnArea{
-	padding: 34% 0 0 0;
-	display: inline-block;
-}
-
-#attentionBtn,#replayBtn{
-	width: 50%;
-	display: inline-block;
-}
 
 
 
@@ -389,6 +336,49 @@ body{
 	width:38%;
 	display: inline-block;
 	margin: 3% 4% 0 0;
+}
+
+
+
+/* swiper */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-button-prev,.swiper-button-next{
+	background: none;
+}
+
+.swiper-button-prev{
+	left: -2em;
+}
+
+.swiper-button-next{
+	right: -2em;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+	opacity: 0;
 }
 
 
