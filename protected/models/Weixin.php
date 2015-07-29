@@ -351,7 +351,7 @@ class Weixin{
 		}
 		$ticketstr="jsapi_ticket=". $ticket ."&noncestr=". $noncestr ."&timestamp=". $time ."&url=". $url;
 		$sign = sha1($ticketstr);
-		return json_encode(array("appid" => $this->_appid,"time" => $time, "noncestr" => $noncestr, "access_token" => $access_token, "sign" => $sign, "url" => $url));	
+		return json_encode(array("appid" => $this->_appid,"time" => $time, "noncestr" => $noncestr, "sign" => $sign, "url" => $url));	
 	}
 
 	public function createMenu($data)
