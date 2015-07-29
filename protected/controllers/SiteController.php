@@ -21,6 +21,11 @@ class SiteController extends Controller
 		$this->render('game');
 	}
 
+	public function actionResult()
+	{
+		$this->render('result');
+	}
+
 	public function actionShare($id)
 	{
 		if(!isset($_SESSION['weixin_info_id'])){
@@ -34,7 +39,7 @@ class SiteController extends Controller
 		$rs = $db->createCommand($sql)->select()->queryScalar();
 		if ($rs) {
 			//print json_encode(array('code' => 3, 'msg' => '已经有战队了'));
-			Header('Location: /weixin/oauth?callback=/');
+			Header('Location: /');
 			Yii::app()->end();
 		}
 
@@ -42,7 +47,7 @@ class SiteController extends Controller
 		$rs = $db->createCommand($sql)->select()->queryRow();
 		if ($rs['fid']) {
 			//print json_encode(array('code' => 4, 'msg' => '战队已满'));
-			Header('Location: /weixin/oauth?callback=/');
+			Header('Location: /');
 			Yii::app()->end();
 		}
 
@@ -50,7 +55,7 @@ class SiteController extends Controller
 		     $id ."'";
 		$db->createCommand($sql)->execute();
 		//print json_encode(array('code' => 1, 'msg' => '加入成功'));
-		Header('Location: /weixin/oauth?callback=/site/game/type/2');
+		Header('Location: /site/game/type/2');
 		Yii::app()->end();
 	}
 
