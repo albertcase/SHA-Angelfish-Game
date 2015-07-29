@@ -524,16 +524,24 @@ window.onload = function (){  // 进入默认状态
 	ctx.fillText("00",can.width*0.805,27);
 	ctx.fillText("00",can.width*0.905,27);
 
-
-	can.ontouchstart = function(event){
+	var readyGo = document.getElementById("readyGo");
+	readyGo.ontouchstart = function(event){
 
 		//阻止网页默认动作（即网页滚动）
 	    event.preventDefault();
 		//if(event.touches[0].pageY >= can.height-can.height*0.4 || isover)return false;
-		if(App.timer == null && countDownNum >=4){
-			document.getElementById("loading_countdown").style.display = "block";
-			loadingInt = setInterval("App.loadingCountdown()",1000)
-		}
+
+		TweenMax.to("#readyGo", 0.6, {
+	        scale:0,
+			autoAlpha:0,
+			opacity:0,
+			onComplete:function(){
+				if(App.timer == null && countDownNum >=4){
+					document.getElementById("loading_countdown").style.display = "block";
+					loadingInt = setInterval("App.loadingCountdown()",1000)
+				}
+			}
+		})
 		
 	}
 
@@ -585,7 +593,7 @@ function screenOrientationListener(){
 
 
 function loadingEnd(){
-	TweenMax.fromTo(document.querySelector('#dramebox'), 0.6, {
+	TweenMax.fromTo(document.querySelector('#dramebox'), 0.3, {
         x: -10,
         y:-100,
         z:200,
@@ -609,7 +617,18 @@ function loadingEnd(){
         z: 0,
         ease: Elastic.easeOut,
         easeParams: [0.2, 0.7],
-        force3D: false
+        force3D: false,
+        onComplete:function(){
+        	TweenMax.staggerFromTo("#readyGo",0.3,{
+				scale:0,
+				autoAlpha:0,
+				opacity:0
+			},{
+				scale:1,
+				autoAlpha:1,
+				opacity:1
+			},0.2)
+        }
     });
 
     console.log("加载完成!");

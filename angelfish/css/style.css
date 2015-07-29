@@ -383,6 +383,24 @@ body{
 
 
 
+/* readyGo */
+#readyGo{
+	width: 80%;
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	margin: 0 0 0 -40%;
+	z-index: 2;
+	opacity: 0;
+}
+
+#startbtn{
+	width: 50%;
+	display: inline-block;
+}
+
+
+
 /* 横屏显示代码 */
 
 @-webkit-keyframes rotation {
