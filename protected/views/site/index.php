@@ -36,6 +36,35 @@
 </article>
 
 <script type="text/javascript">
+
+$(document).ready(function(){
+ 	
+ 	/* rule */
+	$(".back").click(function(){
+		TweenMax.to("#rule", 0.3, {
+	        x:0,
+			autoAlpha:0,
+			opacity:0,
+			onComplete:function(){
+				$("#rule").hide();
+			}
+		})
+	})
+
+	$(".rule_link").click(function(){
+		$("#rule").show();
+		TweenMax.to("#rule", 0.3, {
+	        x:0,
+			autoAlpha:1,
+			opacity:1
+		})
+	})
+
+});
+
+
+
+
 document.addEventListener('touchmove' , function (ev){
 	ev.preventDefault();
 	return false;
