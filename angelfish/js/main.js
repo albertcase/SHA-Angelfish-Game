@@ -457,7 +457,7 @@ var App = {
 
 	
 	
-		window.location.href = "/site/result?fscore=" + curscore;
+		window.location.href = "/site/result?fscore=" + curscore +"&gameType=" + gameType;
 
   //   	$("#finalScore li").each(function(k){
   //   		$(this).html(curscore[k]);

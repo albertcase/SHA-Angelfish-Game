@@ -70,6 +70,7 @@
 	}
 
 	var  curscore = GetQueryString("fscore");
+	var gt = GetQueryString("gameType");
 
 	function loadingEndDoing(){
 		if(!curscore){ 
@@ -85,7 +86,6 @@
 		}else{
 
 			/* 单人成绩 share */
-			var gameType = getType();
 			shareData = {
 				title: '球王就是你，快来加入网球大师赛！',
 			    desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
@@ -93,8 +93,7 @@
 			    link: window.location.host,
 			    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
 			    returnFun: function(){
-			    	alert(6);
-			    	submitScore(gameType,curscore);
+			    	submitScore(gt,curscore);
 			    	window.location.href = "/site/result"
 			    }
 			};

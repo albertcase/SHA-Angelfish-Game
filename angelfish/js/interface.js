@@ -94,7 +94,6 @@
 	// 提交分数
 	function submitScore(x, _score){
 		alert(x);
-		alert(_score)
 		$.ajax({
 		    type: "POST",
 		    url: "/api/subscore/type/" + x,  //X 1为单人，2为双人
