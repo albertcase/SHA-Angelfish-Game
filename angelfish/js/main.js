@@ -454,9 +454,6 @@ var App = {
 		// document.getElementById("replay").innerHTML = "再次挑战";
 		// document.getElementById("replay").style.display = "block";
 
-
-		alert(56);
-		alert(gameType);
 		window.location.href = "/site/result?fscore=" + curscore +"&gameType=" + gameType;
 
 	},
