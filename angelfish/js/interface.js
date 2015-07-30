@@ -126,7 +126,7 @@
 				}).join(" ");
 
 				if(x == 1){
-					scoreListHtml == "" ? scoreListHtml = "<p style='width:100%; text-align:center; padding:15px 0; color:#f60; font-size:16px;'>暂无数据！</p>" : scoreListHtml = scoreListHtml;
+					scoreListHtml == "" ? scoreListHtml = "<p style='width:96%; text-align:center; padding:15px 0; margin:0 0 0 2%; color:#f60; font-size:14px;'>暂无数据！</p>" : scoreListHtml = scoreListHtml;
 					$("#singleList").html(scoreListHtml);
 
 					if(data.score == 0 || !data.score){
@@ -135,7 +135,7 @@
 						$(".single_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 					}
 				}else{
-					scoreListHtml == "" ? scoreListHtml = "<p style='width:100%; text-align:center; padding:15px 0; color:#f60; font-size:16px;'>暂无数据！</p>" : scoreListHtml = scoreListHtml;
+					scoreListHtml == "" ? scoreListHtml = "<p style='width:96%; text-align:center; padding:15px 0; margin:0 0 0 2%; color:#f60; font-size:14px;'>暂无数据！</p>" : scoreListHtml = scoreListHtml;
 					$("#doublesList").html(scoreListHtml);
 
 					if(data.score == 0 || !data.score){
