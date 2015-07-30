@@ -1,10 +1,4 @@
 var wechatParameter = {};
-var wechatUrl;
-if(window.location.href.indexOf('&') < 0){
-    wechatUrl = window.location.href;
-}else{
-    wechatUrl = window.location.href.substr(0,window.location.href.indexOf('&'));
-}
 
 var shareData = {
     title: '球王就是你，快来加入网球大师赛！',
@@ -18,10 +12,10 @@ var shareData = {
 }
 
 function wechatFun(){
-    alert(wechatUrl);
+    alert(window.location.host + window.location.pathname);
     $.ajax({
         type: "POST",
-        url: "/weixin/jssdk?url=" + wechatUrl,
+        url: "/weixin/jssdk?url=" + window.location.host + window.location.pathname,
         dataType:"json"
     }).done(function(data){
         wechatParameter = {
