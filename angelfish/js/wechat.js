@@ -19,7 +19,7 @@ function wechatFun(){
         wechatParameter = {
             "_appid":data.appid,
             "_time": data.time,
-            "_nonceStr": data.nonceStr,
+            "_nonceStr": data.noncestr,
             "_sign": data.sign
         }
         wechatShare();
