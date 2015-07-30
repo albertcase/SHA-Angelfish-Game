@@ -4,7 +4,7 @@ This README would normally document whatever steps are necessary to get your app
 
 ###文件夹权限###
 
-* asset目录
+* assets目录
 * upload目录
 * protected\runtime目录
 
