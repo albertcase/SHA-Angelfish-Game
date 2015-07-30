@@ -2,9 +2,9 @@
 
 class Weixin{
 
-	private $_TOKEN = 'samesame';
-	private $_appid = 'wxeb57276615f0d9f1';
-	private $_secret = '42ac444f36a854b3dc3c66bdc59c98cc';
+	private $_TOKEN = 'angelfish';
+	private $_appid = 'wx849a0a817e70b3a9';
+	private $_secret = '2c25f7d13f9524d1ad7bf3d131b31d77';
 	private $_eventKey = array('A1','B1','C1','C2','B2','B4','A2');
 	private $_db = null;
 	private $_fromUsername = null;
