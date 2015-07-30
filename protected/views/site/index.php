@@ -65,9 +65,9 @@ $(document).ready(function(){
 
 
 
-document.addEventListener('touchmove' , function (ev){
-	ev.preventDefault();
-	return false;
-} , false)
+// document.addEventListener('touchmove' , function (ev){
+// 	ev.preventDefault();
+// 	return false;
+// } , false)
 </script>
 <script type="text/javascript" src="/angelfish/js/loading.js"></script>

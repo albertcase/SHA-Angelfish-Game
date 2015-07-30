@@ -105,7 +105,7 @@
     			window.location.href="/weixin/oauth?callback="+window.location.href;
     			//alert("未登录");
     		}else{
-    			
+    			alert(_score)
     		}
 	    });
 	}
