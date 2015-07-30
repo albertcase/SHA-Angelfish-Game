@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2015 at 10:40 AM
+-- Generation Time: Jul 30, 2015 at 02:58 PM
 -- Server version: 5.6.19-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -17,8 +17,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `urbandecay`
+-- Database: `angelfish`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `same_game_team`
+--
+
+CREATE TABLE IF NOT EXISTS `same_game_team` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `uscore` int(11) NOT NULL,
+  `fid` int(11) NOT NULL,
+  `fscore` int(11) NOT NULL,
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`,`fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -178,14 +196,36 @@ CREATE TABLE IF NOT EXISTS `same_sys_user_login_log` (
   `ip` varchar(20) NOT NULL,
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='后台管理用户登录日志' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='后台管理用户登录日志' AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `same_sys_user_login_log`
 --
 
 INSERT INTO `same_sys_user_login_log` (`id`, `uid`, `uname`, `ip`, `createtime`) VALUES
-(1, 1, 'admin', '101.81.28.152', '2015-07-10 02:39:54');
+(1, 1, 'admin', '101.81.28.152', '2015-07-10 02:39:54'),
+(2, 1, 'admin', '180.175.173.60', '2015-07-23 08:29:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `same_weixin_info`
+--
+
+CREATE TABLE IF NOT EXISTS `same_weixin_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `openid` varchar(255) NOT NULL,
+  `score` int(11) NOT NULL,
+  `nickname` varchar(100) NOT NULL,
+  `sex` varchar(100) NOT NULL,
+  `province` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `headimgurl` varchar(255) NOT NULL,
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `openid` (`openid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
