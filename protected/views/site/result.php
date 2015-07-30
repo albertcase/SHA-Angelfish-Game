@@ -1,5 +1,5 @@
 <script type="text/javascript" src="/angelfish/js/swiper.min.js"></script>
-
+<script type="text/javascript" src="/angelfish/js/wechat.js"></script>
 <div id="wechat">
 	<img src="/angelfish/imgs/wechat_tips.png" />
 </div>
@@ -43,7 +43,7 @@
 
 		<div class="btnArea">
 			<p><a href="javascript:;" id="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
-			<p><a href="javascript:;" id="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
+			<p><a href="/" id="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
 		</div>
 
 		
@@ -64,75 +64,92 @@
 
 <script type="text/javascript">
 	function GetQueryString(name){
-	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-	var r = window.location.search.substr(1).match(reg);
-	if(r!=null)return unescape(r[2]); return null;
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null)return unescape(r[2]); return null;
 	}
 
 	var  curscore = GetQueryString("fscore");
 
-	if(!curscore){
-		$(".scoreList").show();
-		//playersRanking();
-	}else{
+	function loadingEndDoing(){
+		if(!curscore){ 
+			scoreList("1");
+			scoreList("2");
+			$(".scoreList").show();
 
-		document.getElementById("finalScore").style.display = "block";
-		TweenMax.staggerFromTo("#finalScore",1,{
-			scale:0.1,
-			autoAlpha:0,
-			opacity:0
-		},{
-			scale:1,
-			autoAlpha:1,
-			opacity:1,
-			ease: Elastic.easeOut
-		},0.3)
-		$("#finalScore li").each(function(k){
-	   		$(this).html(curscore[k]);
-	   	})
+			var swiper = new Swiper('.swiper-container', {
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			    effect : 'cube'
+			});
+		}else{
+
+			/* 单人成绩 share */
+			var gameType = getType();
+			shareData = {
+			    title: '路易威登基金会·起航',
+			    desc: '艺术与建筑的碰撞，一个美梦成真的故事',
+			    descTimeline: '路易威登基金会·艺术与建筑的碰撞，一个美梦成真的故事 ',
+			    link: window.location.host,
+			    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
+			    returnFun: function(){
+			    	submitScore(gameType,curscore);
+			    	window.location.href = "/site/result"
+			    }
+			};
+
+			editShare();
+
+			document.getElementById("finalScore").style.display = "block";
+			TweenMax.staggerFromTo("#finalScore",1,{
+				scale:0.1,
+				autoAlpha:0,
+				opacity:0
+			},{
+				scale:1,
+				autoAlpha:1,
+				opacity:1,
+				ease: Elastic.easeOut
+			},0.3)
+			$("#finalScore li").each(function(k){
+		   		$(this).html(curscore[k]);
+		   	})
+		}
 	}
    	
 
-   	$("#telBtn").click(function(){
-   		$("#wechat").fadeIn();
-   	})
-
-   	$("#wechat").click(function(){
-   		$("#wechat").hide();
-   	})
-
-
 	function loadingEnd(){
-	TweenMax.fromTo(document.querySelector('#dramebox'), 0.6, {
-		x: -10,
-		y:-100,
-		z:200,
-		rotationY:0,
-		rotationX:"0",
-		rotationZ:0,
-		scale:3,
-		autoAlpha:0,
-		blurFilter:{blurX:50, blurY:10},
-		opacity:0
-	}, {
-		delay: 0.3,
-		autoAlpha:1,
-		rotationY:0,
-		rotationX:0,
-		rotationZ:0,
-		scale:1,
-		opacity:1,
-		x: 0,
-		y: 0,
-		z: 0,
-		ease: Elastic.easeOut,
-		easeParams: [0.2, 0.7],
-		force3D: false
-	});
+		TweenMax.fromTo(document.querySelector('#dramebox'), 0.6, {
+			x: -10,
+			y:-100,
+			z:200,
+			rotationY:0,
+			rotationX:"0",
+			rotationZ:0,
+			scale:3,
+			autoAlpha:0,
+			blurFilter:{blurX:50, blurY:10},
+			opacity:0
+		}, {
+			delay: 0.3,
+			autoAlpha:1,
+			rotationY:0,
+			rotationX:0,
+			rotationZ:0,
+			scale:1,
+			opacity:1,
+			x: 0,
+			y: 0,
+			z: 0,
+			ease: Elastic.easeOut,
+			easeParams: [0.2, 0.7],
+			force3D: false,
+			onComplete:function(){
+				loadingEndDoing();
+			}
+		});
 
-	console.log("加载完成!");
-
-
+		console.log("加载完成!");
 
 	}
 
@@ -141,19 +158,17 @@
 
 
 
+$("#telBtn").click(function(){
+    $("#wechat").fadeIn();
+})
 
-
-
-scoreList("1");
-scoreList("2");
-
-
-var swiper = new Swiper('.swiper-container', {
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    effect : 'cube'
-});
 
 
 
 </script>
+
+
+
+
+
+

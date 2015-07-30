@@ -1,11 +1,3 @@
-function getType(){
-	var str = window.location.pathname;
-	var pos = str.indexOf('type/');
-	return str.substring(pos+5,pos+6);
-}
-
-
-
 
 
 function writeTextOnCanvas(ctx, lh, rw, text, text_x, text_y){  // rw 字符长度
@@ -531,8 +523,8 @@ window.onload = function (){  // 进入默认状态
 	    event.preventDefault();
 		//if(event.touches[0].pageY >= can.height-can.height*0.4 || isover)return false;
 
-		TweenMax.to("#readyGo", 0.6, {
-	        scale:0,
+		TweenMax.to("#readyGo", 0.3, {
+	        scale:1.2,
 			autoAlpha:0,
 			opacity:0,
 			onComplete:function(){
@@ -619,15 +611,31 @@ function loadingEnd(){
         easeParams: [0.2, 0.7],
         force3D: false,
         onComplete:function(){
-        	TweenMax.staggerFromTo("#readyGo",0.3,{
-				scale:0,
-				autoAlpha:0,
-				opacity:0
-			},{
-				scale:1,
-				autoAlpha:1,
-				opacity:1
-			},0.2)
+
+
+        	if($("body").attr("data-team") == "false" && getType() == 2){
+	        	$("#createTeam").show();
+				TweenMax.staggerFromTo("#createTeam",1,{
+					scale:1.2,
+					autoAlpha:0,
+					opacity:0
+				},{
+					scale:1,
+					autoAlpha:1,
+					opacity:1,
+					ease: Elastic.easeOut
+				},0.2)
+	        }else{
+	        	TweenMax.staggerFromTo("#readyGo",0.3,{
+					scale:0.8,
+					autoAlpha:0,
+					opacity:0
+				},{
+					scale:1,
+					autoAlpha:1,
+					opacity:1
+				},0.2)
+	        }
         }
     });
 

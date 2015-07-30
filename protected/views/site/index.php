@@ -9,14 +9,6 @@
 <article id="dramebox">
 	<div id="loading"></div>
 
-	<div id="createTeam">
-		<img src="/angelfish/imgs/createTeam.png" width="100%" />
-		<div class="createTeam_con">
-			<input type="text" maxlength="10" placeholder="团队的名称有十个汉字" name="teamname" id="teamname">
-			<p><a href="javascript:submitTeamname();" id="findPartner"><img src="/angelfish/imgs/findBtn.png" width="100%" /></a></p>
-		</div>
-	</div>
-
 	<section class="container">
 		<img src="/angelfish/imgs/home_bg.jpg" width="100%" />
 		<div class="menu">
@@ -29,7 +21,7 @@
 			<a href="/site/game/type/1" class="startP-1" title="个人赛">
 				<img src="/angelfish/imgs/1p.png" width="100%" />
 			</a>
-			<a href="javascript:teamCompetition();" class="startP-2" title="双打赛">
+			<a href="/site/game/type/2" class="startP-2" title="双打赛">
 				<img src="/angelfish/imgs/2p.png" width="100%" />
 			</a>
 		</div>
@@ -44,30 +36,6 @@
 </article>
 
 <script type="text/javascript">
-
-function teamCompetition(){
-	if($("body").attr("data-type") > 0){
-		window.location.href = "/site/game/type/2";
-	}else{
-		$("#createTeam").show();
-		TweenMax.staggerFromTo("#createTeam",1,{
-			scale:1.2,
-			autoAlpha:0,
-			opacity:0
-		},{
-			scale:1,
-			autoAlpha:1,
-			opacity:1,
-			ease: Elastic.easeOut
-		},0.2)
-	}
-}
-
-function submitTeamname(){
-	var createTeamname = $("#teamname").val();
-	createTeam(createTeamname);
-}
-
 
 /* rule */
 $(".back").click(function(){

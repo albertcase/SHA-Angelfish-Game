@@ -16,9 +16,20 @@
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/style.css" />
 	<script type="text/javascript" src="/angelfish/js/jquery.js"></script>
+	<script type="text/javascript" src="/angelfish/js/jweixin.js"></script>
 	<script type="text/javascript" src="/angelfish/js/PxLoader.js"></script>
 	<script type="text/javascript" src="/angelfish/js/TweenMax.min.js"></script>
 	<script type="text/javascript" src="/angelfish/js/interface.js"></script>
+	<script type="text/javascript">
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?5df892c138f345d54d06afc3b26c0a14";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
 </head>
 <body>
 	<?php echo $content; ?>

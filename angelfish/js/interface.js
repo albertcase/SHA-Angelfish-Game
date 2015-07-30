@@ -1,5 +1,15 @@
 	//@charset "utf-8";
 
+	function getType(){
+		var str = window.location.pathname;
+		var pos = str.indexOf('type/');
+		return str.substring(pos+5,pos+6);
+	}
+
+
+
+
+
 	//判断登录
 	function islogin(){
 		$.ajax({
@@ -11,7 +21,7 @@
     			window.location.href="/weixin/oauth?callback="+window.location.href;
     			//alert("未登录");
     		}else{
-    			$("body").attr("data-type",data.team);
+    			$("body").attr("data-team",data.team); //是否已经有团队
     		}
 	    });
 	}
@@ -37,36 +47,48 @@
     			alert("站队名已经存在");
     		}else{
     			//创建成功
-    			window.location.href = "/site/game/type/2";
+    			$("#wechat").fadeIn();
+				shareData = {
+				    title: '路易威登基金会·起航',
+				    desc: '艺术与建筑的碰撞，一个美梦成真的故事',
+				    descTimeline: '路易威登基金会·艺术与建筑的碰撞，一个美梦成真的故事 ',
+				    link: window.location.host + '/site/share/id/' + data.msg,
+				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
+				    returnFun: function(){
+				    	window.location.href = "/site/game/type/2"
+				    }
+				};
+
+				editShare();
     		}
 	    });
 	}
 
 	// 加入团队
-	function joinTeam(_id){
-		$.ajax({
-		    type: "POST",
-		    url: "/api/joinTeam",  //X 1为单人，2为双人
-		    data: {
-		    	"id": _id
-		    },
-		    dataType:"json"
-	    }).done(function(data){
-    		if(data.code == 0){
-    			window.location.href="/weixin/oauth?callback="+window.location.href;
-    			//alert("未登录");
-    		}else if(data.code == 2){
-    			alert("参数错误");
-    		}else if(data.code == 3){
-    			alert("已经有站队");
-    		}else if(data.code == 4){
-    			alert("站队名额已满");
-    		}else{
-    			//创建成功
-    			window.location.href = "/site/game/type/2";
-    		}
-	    });
-	}
+	// function joinTeam(_id){
+	// 	$.ajax({
+	// 	    type: "POST",
+	// 	    url: "/api/joinTeam",  //X 1为单人，2为双人
+	// 	    data: {
+	// 	    	"id": _id
+	// 	    },
+	// 	    dataType:"json"
+	//     }).done(function(data){
+ //    		if(data.code == 0){
+ //    			window.location.href="/weixin/oauth?callback="+window.location.href;
+ //    			//alert("未登录");
+ //    		}else if(data.code == 2){
+ //    			alert("参数错误");
+ //    		}else if(data.code == 3){
+ //    			alert("已经有站队");
+ //    		}else if(data.code == 4){
+ //    			alert("站队名额已满");
+ //    		}else{
+ //    			//创建成功
+ //    			window.location.href = "/site/game/type/2";
+ //    		}
+	//     });
+	// }
 
 
 	// 提交分数
@@ -98,7 +120,6 @@
 	    }).done(function(data){
     		if(data.code == 0){
     			window.location.href="/weixin/oauth?callback="+window.location.href;
-    			//alert("未登录");
     		}else{
     			var scoreListHtml = $.map(data.msg,function(v,key){
  					return '<li><div class="rankli"><div class="rankGrade">'+parseInt(key+1)+'</div><div class="rankName">'+v.nickname+'</div><div class="rankScore">'+v.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" /></li>';
@@ -112,18 +133,24 @@
 					$(".doubles_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 				}
 
+				if(data.score == 0 || !data.score){
+					$(".single_owen,.doubles_owen").html('<div class="rankli"><div class="rankGrade"></div><div class="rankName">暂无您的数据!</div><div class="rankScore"></div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
+				}
+
     		}
 	    });
 	}
 
 
 
+   	$("#wechat").click(function(){
+   		$(this).hide();
+   	})
 
 
 islogin();
 
-//分享地址
-// /site/share/id/1
+
 
 
 	
