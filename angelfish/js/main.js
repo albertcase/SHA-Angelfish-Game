@@ -455,17 +455,10 @@ var App = {
 		// document.getElementById("replay").style.display = "block";
 
 
-	
+		alert(56);
 		alert(gameType);
 		window.location.href = "/site/result?fscore=" + curscore +"&gameType=" + gameType;
 
-  //   	$("#finalScore li").each(function(k){
-  //   		$(this).html(curscore[k]);
-  //   	})
-
-		// $("#submitBtn").click(function(){
-		// 	submitScore(gameType,curscore);
-		// })
 	},
 	// 添加对象
 	addElement:function(o){
