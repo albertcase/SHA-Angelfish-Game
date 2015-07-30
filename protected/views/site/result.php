@@ -87,11 +87,6 @@
 			/* 单人成绩 share */
 			var gameType = getType();
 			shareData = {
-			    title: '路易威登基金会·起航',
-			    desc: '艺术与建筑的碰撞，一个美梦成真的故事',
-			    descTimeline: '路易威登基金会·艺术与建筑的碰撞，一个美梦成真的故事 ',
-			    link: window.location.host,
-			    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
 			    returnFun: function(){
 			    	submitScore(gameType,curscore);
 			    	window.location.href = "/site/result"

@@ -49,11 +49,8 @@
     			//创建成功
     			$("#wechat").fadeIn();
 				shareData = {
-				    title: '路易威登基金会·起航',
-				    desc: '艺术与建筑的碰撞，一个美梦成真的故事',
-				    descTimeline: '路易威登基金会·艺术与建筑的碰撞，一个美梦成真的故事 ',
 				    link: window.location.host + '/site/share/id/' + data.msg,
-				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
+				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
 				    returnFun: function(){
 				    	window.location.href = "/site/game/type/2"
 				    }
