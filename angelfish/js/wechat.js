@@ -12,10 +12,10 @@ var shareData = {
 }
 
 function wechatFun(){
-    alert('http://'+window.location.host + window.location.pathname);
+    alert(window.location.href);
     $.ajax({
         type: "POST",
-        url: "/weixin/jssdk?url=http://" + window.location.host + window.location.pathname,
+        url: "/weixin/jssdk?url=" + window.location.href,
         dataType:"json"
     }).done(function(data){
         wechatParameter = {
