@@ -82,7 +82,8 @@ function loading(allAmg){
 		})
 
 		TweenMax.to(document.querySelector('#loading'), 0.3, {
-	       autoAlpha: 0
+	       autoAlpha: 0,
+	       ease: Elastic.easeOut
 	    });
 
 	    TweenMax.fromTo(document.querySelector('#dramebox'), 3.6, {
