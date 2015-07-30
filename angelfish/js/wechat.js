@@ -13,7 +13,7 @@ var shareData = {
 function wechatFun(){
     $.ajax({
         type: "POST",
-        url: "/weixin/jssdk/url/" + window.location.host,
+        url: "/weixin/jssdk/url/" + window.location.href,
         dataType:"json"
     }).done(function(data){
         wechatParameter = {
