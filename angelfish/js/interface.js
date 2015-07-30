@@ -126,6 +126,7 @@
 				}).join(" ");
 
 				if(x == 1){
+					scoreListHtml == "" ? scoreListHtml = "暂无数据！" : scoreListHtml = scoreListHtml;
 					$("#singleList").html(scoreListHtml);
 
 					if(data.score == 0 || !data.score){
@@ -134,7 +135,7 @@
 						$(".single_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 					}
 				}else{
-					alert(scoreListHtml)
+					scoreListHtml == "" ? scoreListHtml = "暂无数据！" : scoreListHtml = scoreListHtml;
 					$("#doublesList").html(scoreListHtml);
 
 					if(data.score == 0 || !data.score){
