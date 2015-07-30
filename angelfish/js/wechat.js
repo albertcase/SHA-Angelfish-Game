@@ -18,6 +18,7 @@ var shareData = {
 }
 
 function wechatFun(){
+    alert(wechatUrl);
     $.ajax({
         type: "POST",
         url: "/weixin/jssdk?url=" + wechatUrl,
