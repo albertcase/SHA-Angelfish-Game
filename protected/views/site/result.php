@@ -93,6 +93,7 @@
 			    link: window.location.host,
 			    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
 			    returnFun: function(){
+			    	alert(6);
 			    	submitScore(gameType,curscore);
 			    	window.location.href = "/site/result"
 			    }
