@@ -15,7 +15,7 @@ function wechatFun(){
     alert(window.location.href);
     $.ajax({
         type: "POST",
-        url: "/weixin/jssdk?url=" + window.location.href,
+        url: "/weixin/jssdk?url=" + encodeURIComponent(window.location.href),
         dataType:"json"
     }).done(function(data){
         wechatParameter = {
