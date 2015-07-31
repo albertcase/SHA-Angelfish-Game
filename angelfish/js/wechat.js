@@ -75,8 +75,42 @@ function wechatShare(){
         'openCard'
       ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
   });
+  
+  wx.ready(function(){
+        wx.onMenuShareTimeline({
+            title: shareData.descTimeline, // 分享标题
+            link: shareData.link, // 分享链接
+            imgUrl: shareData.imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                shareData.returnFun();
+                //alert('分享成功');
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+                // alert("分享失败")
+            }
+        });
+        
+        
+        wx.onMenuShareAppMessage({
+            title: shareData.title, // 分享标题
+            link: shareData.link, // 分享链接
+            imgUrl: shareData.imgUrl, // 分享图标
+            desc: shareData.desc,
+            success: function () { 
+                // 用户确认分享后执行的回调函数
 
-  editShare();
+                shareData.returnFun();
+
+                //alert('分享成功');
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+               // alert("分享失败")
+            }
+        });
+  })
 
 }
 
