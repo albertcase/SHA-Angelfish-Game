@@ -117,7 +117,7 @@ function loading(allAmg){
   		
 	} , function (p){
 
-		$("#loading span").html(p+"%");
+		$("#loading span").html("<i>"+p+"%</i>");
 
 		TweenMax.to(document.querySelector('.loadingImg img'), 0.3, {
 	        opacity: p*0.01,
@@ -125,7 +125,7 @@ function loading(allAmg){
 	        easeParams: [0.4, 0.3],
 	        force3D: false
 	    });
-		console.log(p);
+		//console.log(p);
 	});
 }
 

@@ -152,9 +152,6 @@ score.src = "/angelfish/imgs/score.png";
 var timeimg = new Image();
 timeimg.src = "/angelfish/imgs/time.png";
 
-var gif = new Image();
-gif.src = "/angelfish/imgs/a.gif";
-
 
 // 金币类;
 function Money(x,y,speed,img){
@@ -478,7 +475,7 @@ window.onload = function (){  // 进入默认状态
 	ctx.drawImage(heroImg,(can.width - heroImg.width)/2,can.height - heroImg.height); //绘制笑脸
 	ctx.textAlign = "center";
 	ctx.fillStyle = "#b1ff26";
-	ctx.font = 'bold 27px Arial';
+	//ctx.font = 'bold 27px Arial';
 	//ctx.fillText("Press click screen to start...",can.width/2,can.height/2);
 
 	//writeTextOnCanvas(ctx, 40, 18, "         点击屏幕   开始你的挑战", can.width/2, can.height/2 - 80);
