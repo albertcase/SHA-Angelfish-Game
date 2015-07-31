@@ -83,6 +83,10 @@
 			    prevButton: '.swiper-button-prev',
 			    effect : 'cube'
 			});
+
+			if(gt == 2){
+				swiper.slideTo(gt, 600, true);
+			}
 		}else{
 
 			/* 单人成绩 share */
@@ -94,7 +98,8 @@
 			    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
 			    returnFun: function(){
 			    	submitScore(gt,curscore);
-			    	window.location.href = "/site/result"
+			    	window.location.href = "/site/result?gameType=" + gt;
+			    	// href="javascript:mySwiper.slideTo(2, 600, true);"
 			    }
 			};
 
