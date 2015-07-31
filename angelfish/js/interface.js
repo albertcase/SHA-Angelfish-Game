@@ -9,7 +9,6 @@
 
 
 
-
 	//判断登录
 	function islogin(){
 		$.ajax({
@@ -23,9 +22,11 @@
     		}else{
     			$("body").attr("data-team",data.team); //是否已经有团队
     			if($("#loading").length > 0){
-    				$(".loadingImg img").load(function(){
-					  	loading(LoadingImg);  
-					});
+    				var objImg=new Image();
+					objImg.src="/angelfish/imgs/loading.png";
+					objImg.onload=function(){
+						loading(LoadingImg);  
+					}
     			}
     		}
 	    });
