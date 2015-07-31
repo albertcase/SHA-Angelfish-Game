@@ -1,4 +1,6 @@
 	//@charset "utf-8";
+	
+	var gTeamId;
 
 	function getType(){
 		var str = window.location.pathname;
@@ -35,8 +37,7 @@
 					}
     			}
 
-    			var gTeamId = $("body").attr("data-team");
-				alert(gTeamId);
+    			gTeamId = $("body").attr("data-team");
     		}
 	    });
 	}

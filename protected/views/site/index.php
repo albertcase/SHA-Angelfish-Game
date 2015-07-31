@@ -44,13 +44,6 @@
 
 $(document).ready(function(){
 
-	// var gTeamId = $("body").attr("data-team");
-	// alert(gTeamId);
- // 	if(gTeamId){
- // 		$(".startP-2").attr("href","/site/game/type/2?teamId="+gTeamId);
- // 	}
- // 	alert($(".startP-2").attr("href"));
-
  	/* rule */
 	$(".back").click(function(){
 		TweenMax.to("#rule", 0.3, {
