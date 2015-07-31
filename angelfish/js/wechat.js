@@ -75,15 +75,16 @@ function wechatShare(){
         'openCard'
       ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
   });
-
-  editShare();
+  
+  wx.ready(function(){
+    editShare();
+  })
 
 }
 
 
 
 function editShare(){   ///
-    alert(shareData.descTimeline)
      wx.onMenuShareTimeline({
             title: shareData.descTimeline, // 分享标题
             link: shareData.link, // 分享链接
