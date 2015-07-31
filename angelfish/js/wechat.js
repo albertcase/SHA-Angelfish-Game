@@ -83,6 +83,7 @@ function wechatShare(){
 
 
 function editShare(){   ///
+    alert(shareData.link)
      wx.onMenuShareTimeline({
             title: shareData.descTimeline, // 分享标题
             link: shareData.link, // 分享链接
