@@ -46,16 +46,20 @@ class ApiController extends Controller
 			Yii::app()->end();
 		}
 
-		$sql = "SELECT id FROM `same_game_team` WHERE `name` = '". $teamname. "'";
-		$rs = $db->createCommand($sql)->select()->queryScalar();
+		$sql = "SELECT id FROM `same_game_team` WHERE `name` = :name";
+		$command = $db->createCommand($sql);
+		$command ->bindParam(":name",json_encode(array("name" => $teamname)), PDO::PARAM_STR);
+		$rs = $command->select()->queryScalar();
 		if ($rs) {
 			print json_encode(array('code' => 4, 'msg' => '战队名已存在'));
 			Yii::app()->end();
 		}
 
-		$sql = "INSERT INTO `same_game_team` SET `name` = '". $teamname. "', `uid` = '".
+		$sql = "INSERT INTO `same_game_team` SET `name` = :name, `uid` = '".
 		     intval($_SESSION['weixin_info_id']) ."'";
-		$db->createCommand($sql)->execute();
+		$command = $db->createCommand($sql);
+		$command ->bindParam(":name",json_encode(array("name" => $teamname)), PDO::PARAM_STR);
+		$command->execute();
 		$id = $db->lastInsertId;
 		print json_encode(array('code' => 1, 'msg' => $id));
 		Yii::app()->end();
@@ -187,8 +191,14 @@ class ApiController extends Controller
 				Yii::app()->end();
 				break;
 		}
-		
-		print json_encode(array('code' => 1, 'msg' => $scoreList, 'ranking'=> $num + 1, 'nickname' => $user['nickname'], 'score' => $user['score']));
+		Yii::import('ext.emoji.emoji', true);
+		for ($i = 0; $i < count($scoreList); $i++) {
+			$name = json_decode($scoreList[$i]['nickname'], true);
+			$scoreList[$i]['nickname'] = emoji_unified_to_html($name['name']);
+		}
+		$name = json_decode($user['nickname'], true);
+		$nickname = emoji_unified_to_html($name['name']);
+		print json_encode(array('code' => 1, 'msg' => $scoreList, 'ranking'=> $num + 1, 'nickname' => $nickname, 'score' => $user['score']));
 		Yii::app()->end();
 	}
 }
