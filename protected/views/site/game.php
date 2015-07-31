@@ -35,6 +35,7 @@
 
 	var gt = getType();
 	var gTeamId = $("body").attr("data-team");
+	console.log(window.location.host + '/site/share/id/' + gTeamId);
 	if(gt == 2 && gTeamId){
 		shareData = {
 			title: '球王就是你，快来加入网球大师赛！',
