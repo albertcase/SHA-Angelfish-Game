@@ -1,7 +1,7 @@
 <div id="loading">
 	<div class="loadingImg">
 		<img src="/angelfish/imgs/loading.png" width="100%" />
-		<span>-</span>
+		<span>正在加载...</span>
 	</div>
 </div>
 
