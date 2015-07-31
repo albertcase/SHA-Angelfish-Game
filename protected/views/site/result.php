@@ -94,7 +94,6 @@
 			    returnFun: function(){
 			    	submitScore(gt,curscore);
 			    	window.location.href = "/site/result?gameType=" + gt;
-			    	// href="javascript:mySwiper.slideTo(2, 600, true);"
 			    }
 			};
 
