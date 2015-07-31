@@ -81,10 +81,7 @@ function loading(allAmg){
 			$(this).attr("src",$(this).attr("sourcesrc"));
 		})
 
-		TweenMax.to(document.querySelector('#loading'), 0.3, {
-	       autoAlpha: 0,
-	       ease: Elastic.easeOut
-	    });
+		
 
 	    TweenMax.fromTo(document.querySelector('#dramebox'), 3.6, {
 	        x: 0,
@@ -110,7 +107,13 @@ function loading(allAmg){
 	        z: 0,
 	        ease: Elastic.easeOut,
 	        easeParams: [0.2, 0.7],
-	        force3D: false
+	        force3D: false,
+	        onComplete:function(){
+	        	TweenMax.to(document.querySelector('#loading'), 0.6, {
+			       autoAlpha: 0,
+			       ease: Elastic.easeOut
+			    });
+	        }
 	    });
 
 	    ballAnimate();
