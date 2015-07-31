@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/angelfish/js/wechat.js"></script>
+
 <div id="loading">
 	<div class="loadingImg">
 		<img src="/angelfish/imgs/loading.png" width="100%" />
@@ -68,6 +68,7 @@ $(document).ready(function(){
 });
 
 
+editShare();
 // document.addEventListener('touchmove' , function (ev){
 // 	ev.preventDefault();
 // 	return false;
