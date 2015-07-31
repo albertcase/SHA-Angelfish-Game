@@ -46,7 +46,7 @@
 		    	window.location.href = "/site/game/type/2"
 		    }
 		};
-
+		alert(shareData.link);
 		editShare();
 	}
 
