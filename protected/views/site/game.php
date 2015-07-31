@@ -34,7 +34,7 @@
 	}
 
 	var gt = getType();
-	var gTeamId = $("body").attr("data-team");
+	var gTeamId = GetQueryString("teamId");
 	alert(window.location.host + '/site/share/id/' + gTeamId);
 	if(gt == 2 && gTeamId){
 		shareData = {
