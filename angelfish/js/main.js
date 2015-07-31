@@ -122,15 +122,15 @@ var ball = new Image(),
 	wine3.speed = 7;
 
 	wine4.src = "/angelfish/imgs/gift/wine5.png";
-	wine4.value = 50;
+	wine4.value = 5000;
 	wine4.speed = 7;
 
 	wine5.src = "/angelfish/imgs/gift/wine6.png";
-	wine5.value = 50;
+	wine5.value = 5000;
 	wine5.speed = 7;
 
 	wine6.src = "/angelfish/imgs/gift/wine7.png";
-	wine6.value = 50;
+	wine6.value = 5000;
 	wine6.speed = 7;
 
 	wine7.src = "/angelfish/imgs/gift/wine8.png";
