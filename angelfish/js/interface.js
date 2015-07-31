@@ -22,6 +22,9 @@
     			//alert("未登录");
     		}else{
     			$("body").attr("data-team",data.team); //是否已经有团队
+    			if($("#loading").length > 0){
+    				loading(LoadingImg);
+    			}
     		}
 	    });
 	}

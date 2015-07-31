@@ -129,7 +129,7 @@ function loading(allAmg){
 	});
 }
 
-loading(LoadingImg);
+
 
 
 
