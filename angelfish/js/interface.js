@@ -40,7 +40,6 @@
 
     				var gTeamId = data.team;
 	    			var gt = getType();
-					alert(gTeamId);
 					if(gt == 2 && gTeamId){
 						shareData = {
 							title: '球王就是你，快来加入网球大师赛！',
@@ -52,7 +51,6 @@
 						    	window.location.href = "/site/game/type/2"
 						    }
 						};
-						alert(shareData.link);
 						editShare();
 					}
 

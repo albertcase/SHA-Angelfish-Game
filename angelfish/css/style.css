@@ -215,6 +215,7 @@ body{
 
 
 .btnArea{
+	width: 100%;
 	position: absolute;
     left: 0;
     bottom: -32%;
@@ -260,7 +261,7 @@ body{
 	left: 50%;
 	top: 50%;
 	z-index: 10;
-	margin: -300px 0 0 -48%;
+	margin: -340px 0 0 -48%;
 	text-align: center;
 	display: none;
 }
@@ -495,6 +496,18 @@ body{
 	.ball2{
 		right: -6em;
 	}
+
+	.scoreList ul,.owen{
+		width: 84%;
+	}
+	.owen{
+		bottom: 2.5em;
+		left: 8%;
+	}
+
+	.btnArea{
+		bottom: -30%;
+	}
 }
 
 /* 6 */
@@ -505,6 +518,18 @@ body{
 
 	.ball2{
 		right: -6em;
+	}
+
+	.scoreList ul,.owen{
+		width: 84%;
+	}
+	.owen{
+		bottom: 2em;
+		left: 8%;
+	}
+
+	.btnArea{
+		bottom: -30%;
 	}
 }
 
