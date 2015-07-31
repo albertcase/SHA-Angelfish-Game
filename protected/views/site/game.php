@@ -48,8 +48,6 @@
 		};
 
 		editShare();
-	}else{
-		editShare();
 	}
 
 
