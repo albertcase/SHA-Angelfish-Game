@@ -81,9 +81,9 @@ function loading(allAmg){
 			$(this).attr("src",$(this).attr("sourcesrc"));
 		})
 
-		TweenMax.to(document.querySelector('#loading'), 0.3, {
+		TweenMax.to(document.querySelector('#loading'), 0.6, {
 	       autoAlpha: 0,
-	       ease: Elastic.easeOut
+	       opacity: 0
 	    });
 
 	    TweenMax.fromTo(document.querySelector('#dramebox'), 3.6, {
@@ -110,14 +110,18 @@ function loading(allAmg){
 	        z: 0,
 	        ease: Elastic.easeOut,
 	        easeParams: [0.2, 0.7],
-	        force3D: false
+	        force3D: false,
+	        onComplete:function(){
+
+	        }
 	    });
+
 
 	    ballAnimate();
   		
 	} , function (p){
 
-		$("#loading span").html(p+"%");
+		$("#loading span").html("<i>"+p+"%</i>");
 
 		TweenMax.to(document.querySelector('.loadingImg img'), 0.3, {
 	        opacity: p*0.01,
@@ -125,11 +129,11 @@ function loading(allAmg){
 	        easeParams: [0.4, 0.3],
 	        force3D: false
 	    });
-		console.log(p);
+		//console.log(p);
 	});
 }
 
-loading(LoadingImg);
+
 
 
 
