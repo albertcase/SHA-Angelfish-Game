@@ -232,7 +232,6 @@ var App = {
 			
 		}else{
 			countDownNum --;
-			//countDownNum == 1?countDownNum="0":countDownNum=countDownNum;
 			document.getElementById("loading_countdown").innerHTML = '<img src="/angelfish/imgs/'+countDownNum+'.png" width="100%" />';;
 			TweenMax.staggerFromTo(".loading_countdown",1,{
 	    		scale:0.1,
@@ -300,7 +299,7 @@ var App = {
 		this.context.fillText(countdownVal,this.canvas.width*0.905,27);
 
 
-		//startEvent.innerHTML="pause";
+		
 		this.context.fillStyle="transparent";
 		this.context.fillRect(0,this.canvas.height-this.canvas.height*0.4,this.canvas.width,this.canvas.height*0.4);
 
@@ -410,8 +409,6 @@ var App = {
 		this.context.font = 'bold 27px Arial';
 
 		writeTextOnCanvas(this.context,40, 18, "           Pause!   点击屏幕继续", this.canvas.width/2, this.canvas.height/2 - 90);
-		//this.context.fillText("Press click screen to continue...",this.canvas.width/2,this.canvas.height/2 + 40);
-		//startEvent.innerHTML="play";
 
 		clearInterval(setTime);
 		cdStatus = true;
@@ -448,8 +445,6 @@ var App = {
 
 		clearInterval(setTime);
 		isover = true;
-		// document.getElementById("replay").innerHTML = "再次挑战";
-		// document.getElementById("replay").style.display = "block";
 
 		window.location.href = "/site/result?fscore=" + curscore +"&gameType=" + gameType;
 
@@ -473,12 +468,7 @@ window.onload = function (){  // 进入默认状态
 	ctx.drawImage(bg,0,0,canvasWidth,canvasHeight);
 
 	ctx.drawImage(heroImg,(can.width - heroImg.width)/2,can.height - heroImg.height); //绘制笑脸
-	ctx.textAlign = "center";
-	ctx.fillStyle = "#b1ff26";
-	//ctx.font = 'bold 27px Arial';
-	//ctx.fillText("Press click screen to start...",can.width/2,can.height/2);
 
-	//writeTextOnCanvas(ctx, 40, 18, "         点击屏幕   开始你的挑战", can.width/2, can.height/2 - 80);
 	
 	// 绘制生命值及得分
 	ctx.drawImage(score,3,-8,can.width*0.6,50);
