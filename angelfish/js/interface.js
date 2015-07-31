@@ -34,6 +34,9 @@
 						loading(LoadingImg);  
 					}
     			}
+
+    			var gTeamId = $("body").attr("data-team");
+				alert(gTeamId);
     		}
 	    });
 	}
