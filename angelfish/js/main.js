@@ -572,7 +572,7 @@ function screenOrientationListener(){
 
 
 function loadingEnd(){
-	TweenMax.fromTo(document.querySelector('#dramebox'), 0.3, {
+	TweenMax.fromTo(document.querySelector('#dramebox'), 0.6, {
         x: -10,
         y:-100,
         z:200,

@@ -1,4 +1,5 @@
 <script type="text/javascript" src="/angelfish/js/swiper.min.js"></script>
+<script type="text/javascript" src="/angelfish/js/wechat.js"></script>
 <div id="wechat">
 	<img src="/angelfish/imgs/wechat_tips.png" />
 </div>

@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="/angelfish/js/PxLoader.js"></script>
 	<script type="text/javascript" src="/angelfish/js/tweenMax.min.js"></script>
 	<script type="text/javascript" src="/angelfish/js/interface.js"></script>
-	<script type="text/javascript" src="/angelfish/js/wechat.js"></script>
+	
 	<script type="text/javascript">
 		var _hmt = _hmt || [];
 		(function() {
