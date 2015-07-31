@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/angelfish/css/style.css" />
+	<link id="skin_style" href="/css/emoji.css" type="text/css" rel="stylesheet" charset="utf-8" /> 
 	<script type="text/javascript" src="/angelfish/js/jquery.js"></script>
 	<script type="text/javascript" src="/angelfish/js/jweixin.js"></script>
 	<script type="text/javascript" src="/angelfish/js/PxLoader.js"></script>
