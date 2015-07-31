@@ -63,7 +63,7 @@
 </article>
 
 <script type="text/javascript">
-
+	
 	var  curscore = GetQueryString("fscore");
 	var gt = GetQueryString("gameType");
 

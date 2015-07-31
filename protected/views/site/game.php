@@ -34,6 +34,10 @@
 	}
 
 	var gt = getType();
+	$(document).ready(function(){
+		alert(gTeamId)
+	})
+
 	alert(window.location.host + '/site/share/id/' + gTeamId);
 	if(gt == 2 && gTeamId){
 		shareData = {
