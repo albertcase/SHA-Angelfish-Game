@@ -26,7 +26,30 @@ var LoadingImg = [
 	"/angelfish/imgs/gift/wine5.png",
 	"/angelfish/imgs/gift/wine6.png",
 	"/angelfish/imgs/gift/wine7.png",
-	"/angelfish/imgs/gift/wine8.png"
+	"/angelfish/imgs/gift/wine8.png",
+	"/angelfish/imgs/0.png",
+	"/angelfish/imgs/1.png",
+	"/angelfish/imgs/2.png",
+	"/angelfish/imgs/3.png",
+	"/angelfish/imgs/arr_l.png",
+	"/angelfish/imgs/arr_r.png",
+	"/angelfish/imgs/attentionBtn.png",
+	"/angelfish/imgs/backBtn.png",
+	"/angelfish/imgs/bg2.jpg",
+	"/angelfish/imgs/createTeam.png",
+	"/angelfish/imgs/doubles.png",
+	"/angelfish/imgs/findBtn.png",
+	"/angelfish/imgs/libg.png",
+	"/angelfish/imgs/playersRanking.png",
+	"/angelfish/imgs/ready.png",
+	"/angelfish/imgs/readyCon.png",
+	"/angelfish/imgs/replay.png",
+	"/angelfish/imgs/rule.jpg",
+	"/angelfish/imgs/share.png",
+	"/angelfish/imgs/single.png",
+	"/angelfish/imgs/telBtn.png",
+	"/angelfish/imgs/timesup.png",
+	"/angelfish/imgs/wechat_tips.png"
 ]
 
 
@@ -54,8 +77,13 @@ function LoadFn ( arr , fn , fn2){
 function loading(allAmg){
 	LoadFn(allAmg , function (){
 
+		$("#dramebox img").each(function(){ 
+			$(this).attr("src",$(this).attr("sourcesrc"));
+		})
+
 		TweenMax.to(document.querySelector('#loading'), 0.3, {
-	       autoAlpha: 0
+	       autoAlpha: 0,
+	       ease: Elastic.easeOut
 	    });
 
 	    TweenMax.fromTo(document.querySelector('#dramebox'), 3.6, {
@@ -84,19 +112,20 @@ function loading(allAmg){
 	        easeParams: [0.2, 0.7],
 	        force3D: false
 	    });
-  	
-  		ballAnimate();
+
+	    ballAnimate();
+  		
 	} , function (p){
 
-		TweenMax.to(document.querySelector('#loading'), 0.3, {
-	        width: p+"%",
+		$("#loading span").html(p+"%");
+
+		TweenMax.to(document.querySelector('.loadingImg img'), 0.3, {
 	        opacity: p*0.01,
 	        ease: Elastic.easeOut,
 	        easeParams: [0.4, 0.3],
 	        force3D: false
 	    });
-		//document.getElementById("loading").innerHTML = p+"%";
-		//console.log(p);
+		console.log(p);
 	});
 }
 

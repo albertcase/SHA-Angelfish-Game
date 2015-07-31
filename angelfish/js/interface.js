@@ -49,11 +49,11 @@
     			//创建成功
     			$("#wechat").fadeIn();
 				shareData = {
-				    title: '路易威登基金会·起航',
-				    desc: '艺术与建筑的碰撞，一个美梦成真的故事',
-				    descTimeline: '路易威登基金会·艺术与建筑的碰撞，一个美梦成真的故事 ',
+					title: '球王就是你，快来加入网球大师赛！',
+			   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+			    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
 				    link: window.location.host + '/site/share/id/' + data.msg,
-				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
+				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
 				    returnFun: function(){
 				    	window.location.href = "/site/game/type/2"
 				    }
@@ -105,7 +105,7 @@
     			window.location.href="/weixin/oauth?callback="+window.location.href;
     			//alert("未登录");
     		}else{
-    			
+    			alert(_score)
     		}
 	    });
 	}
@@ -126,15 +126,23 @@
 				}).join(" ");
 
 				if(x == 1){
+					scoreListHtml == "" ? scoreListHtml = "<p style='width:96%; text-align:center; padding:15px 0; margin:0 0 0 4%; color:#f60; font-size:14px;'>暂无数据！</p>" : scoreListHtml = scoreListHtml;
 					$("#singleList").html(scoreListHtml);
-					$(".single_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
-				}else{
-					$("#doublesList").html(scoreListHtml);
-					$(".doubles_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
-				}
 
-				if(data.score == 0 || !data.score){
-					$(".single_owen,.doubles_owen").html('<div class="rankli"><div class="rankGrade"></div><div class="rankName">暂无您的数据!</div><div class="rankScore"></div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
+					if(data.score == 0 || !data.score){
+						$(".single_owen").html('<div class="rankli"><div class="rankGrade"></div><div class="rankName">暂无您的数据!</div><div class="rankScore"></div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
+					}else{
+						$(".single_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
+					}
+				}else{
+					scoreListHtml == "" ? scoreListHtml = "<p style='width:96%; text-align:center; padding:15px 0; margin:0 0 0 4%; color:#f60; font-size:14px;'>暂无数据！</p>" : scoreListHtml = scoreListHtml;
+					$("#doublesList").html(scoreListHtml);
+
+					if(data.score == 0 || !data.score){
+						$(".doubles_owen").html('<div class="rankli"><div class="rankGrade"></div><div class="rankName">暂无您的数据!</div><div class="rankScore"></div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
+					}else{
+						$(".doubles_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
+					}
 				}
 
     		}
@@ -148,7 +156,7 @@
    	})
 
 
-islogin();
+    islogin();
 
 
 

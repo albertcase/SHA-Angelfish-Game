@@ -1,24 +1,26 @@
 var wechatParameter = {};
+
 var shareData = {
-    title: '路易威登基金会·起航',
-    desc: '艺术与建筑的碰撞，一个美梦成真的故事',
-    descTimeline: '路易威登基金会·艺术与建筑的碰撞，一个美梦成真的故事 ',
+    title: '球王就是你，快来加入网球大师赛！',
+    desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+    descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
     link: window.location.host,
-    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
+    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
     returnFun: function(){
-        
+
     }
 }
 
 function wechatFun(){
     $.ajax({
         type: "POST",
-        url: "/weixin/jssdk/url/" + window.location.host,
+        url: "/weixin/jssdk?url=" + encodeURIComponent(window.location.href),
         dataType:"json"
     }).done(function(data){
         wechatParameter = {
             "_appid":data.appid,
             "_time": data.time,
+            "_nonceStr": data.noncestr,
             "_sign": data.sign
         }
         wechatShare();
@@ -30,12 +32,11 @@ function wechatFun(){
 
 
 function wechatShare(){
-
   wx.config({
       debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
       appId: wechatParameter._appid, // 必填，公众号的唯一标识
       timestamp: wechatParameter._time, // 必填，生成签名的时间戳
-      nonceStr: 'asdkhaedhqwui', // 必填，生成签名的随机串
+      nonceStr: wechatParameter._nonceStr, // 必填，生成签名的随机串
       signature: wechatParameter._sign,// 必填，签名，见附录1
       jsApiList: [
         'checkJsApi',
