@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/angelfish/js/wechat.js"></script>
+
 <div id="wechat">
 	<img src="/angelfish/imgs/wechat_tips.png" />
 </div>
@@ -26,8 +26,28 @@
 
 	function submitTeamname(){
 		var createTeamname = $("#teamname").val();
-		if(createTeamname == "") return false;
-		createTeam(createTeamname);
+		if(createTeamname == "") {
+			alert("团队名字不能为空！")
+		}else{
+			createTeam(createTeamname);
+		}
+	}
+
+	var gt = getType();
+	var gTeamId = $("body").attr("data-team");
+	if(gt == 2 && gTeamId){
+		shareData = {
+			title: '球王就是你，快来加入网球大师赛！',
+	   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+	    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+		    link: window.location.host + '/site/share/id/' + gTeamId,
+		    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
+		    returnFun: function(){
+		    	window.location.href = "/site/game/type/2"
+		    }
+		};
+
+		editShare();
 	}
 
 
