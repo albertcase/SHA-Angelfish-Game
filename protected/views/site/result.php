@@ -77,19 +77,10 @@
 			    nextButton: '.swiper-button-next',
 			    prevButton: '.swiper-button-prev',
 			    effect : 'cube',
-			    onInit: function(swiper){
-			    	
-			    	alert($(".single_owen .rankName").html() != "暂无您的数据!");
-			    	alert(swiper.activeIndex);
-			    	
-			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!"){
+			    onSlideChangeEnd: function(swiper){
+			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!" || swiper.activeIndex == 1 && $(".doubles_owen .rankName").html() != "暂无您的数据!"){
 			    		$("#replayBtn").css("display","inline-block");
 			    	}
-			      //Swiper初始化了
-			    },
-			    onSlideChangeEnd: function(swiper){
-			    	alert($(".single_owen .rankName").html());
-			      //alert('事件触发了;');
 			    }
 			});
 

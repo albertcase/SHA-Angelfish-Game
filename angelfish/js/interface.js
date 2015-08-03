@@ -170,6 +170,7 @@
 					if(data.score == 0 || !data.score){
 						$(".single_owen").html('<div class="rankli"><div class="rankGrade"></div><div class="rankName">暂无您的数据!</div><div class="rankScore"></div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 					}else{
+						$("#replayBtn").css("display","inline-block");
 						$(".single_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 					}
 				}else{
@@ -179,6 +180,7 @@
 					if(data.score == 0 || !data.score){
 						$(".doubles_owen").html('<div class="rankli"><div class="rankGrade"></div><div class="rankName">暂无您的数据!</div><div class="rankScore"></div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 					}else{
+						$("#replayBtn").css("display","inline-block");
 						$(".doubles_owen").html('<div class="rankli"><div class="rankGrade">'+data.ranking+'</div><div class="rankName">'+data.nickname+'</div><div class="rankScore">'+data.score+'</div></div><img src="/angelfish/imgs/libg.png" width="100%" />');
 					}
 				}
