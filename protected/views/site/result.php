@@ -81,11 +81,15 @@
 			    	
 			    	alert($(".single_owen .rankName").html() != "暂无您的数据!");
 			    	alert(swiper.activeIndex);
-			    	alert($(".single_owen .rankName").html());
+			    	
 			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!"){
 			    		$("#replayBtn").css("display","inline-block");
 			    	}
 			      //Swiper初始化了
+			    },
+			    onSlideChangeEnd: function(swiper){
+			    	alert($(".single_owen .rankName").html());
+			      //alert('事件触发了;');
 			    }
 			});
 
