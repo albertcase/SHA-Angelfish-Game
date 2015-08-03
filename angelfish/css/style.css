@@ -223,6 +223,10 @@ body{
 
 #attentionBtn,#replayBtn{
 	width: 50%;
+	display: inline-block;
+}
+
+#replayBtn{
 	display: none;
 }
 
