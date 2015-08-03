@@ -79,6 +79,9 @@
 			    effect : 'cube',
 			    onInit: function(swiper){
 			    	
+			    	alert($(".single_owen .rankName").html() != "暂无您的数据!");
+			    	alert(swiper.activeIndex);
+			    	alert($(".single_owen .rankName").html());
 			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!"){
 			    		$("#replayBtn").css("display","inline-block");
 			    	}
