@@ -76,7 +76,14 @@
 			var swiper = new Swiper('.swiper-container', {
 			    nextButton: '.swiper-button-next',
 			    prevButton: '.swiper-button-prev',
-			    effect : 'cube'
+			    effect : 'cube',
+			    onInit: function(swiper){
+			    	
+			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!" || swiper.activeIndex == 1 && $(".doubles_owen .rankName").html() != "暂无您的数据!"){
+			    		$("#replayBtn").css("display","inline-block");
+			    	}
+			      //Swiper初始化了
+			    }
 			});
 
 			if(gt == 2){

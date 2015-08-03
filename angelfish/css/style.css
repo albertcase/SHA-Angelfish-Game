@@ -223,7 +223,7 @@ body{
 
 #attentionBtn,#replayBtn{
 	width: 50%;
-	display: inline-block;
+	display: none;
 }
 
 .owen{
