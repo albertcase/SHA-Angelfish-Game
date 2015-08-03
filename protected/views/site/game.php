@@ -23,10 +23,6 @@
 </article>
 <script type="text/javascript" src="/angelfish/js/main.js"></script>
 <script type="text/javascript">
-document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-    WeixinJSBridge.call('hideToolbar');
-    WeixinJSBridge.call('hideOptionMenu');
-}
 
 	function submitTeamname(){
 		var createTeamname = $("#teamname").val();
