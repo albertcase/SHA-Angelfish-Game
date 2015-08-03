@@ -23,7 +23,9 @@
 </article>
 <script type="text/javascript" src="/angelfish/js/main.js"></script>
 <script type="text/javascript">
-
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		WeixinJSBridge.call('closeWindow');
+	});
 	function submitTeamname(){
 		var createTeamname = $("#teamname").val();
 		if(createTeamname == "") {
