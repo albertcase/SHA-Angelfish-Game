@@ -495,7 +495,6 @@ window.onload = function (){  // 进入默认状态
 
 	var readyGo = document.getElementById("readyGo");
 	readyGo.ontouchstart = function(event){
-		WeixinJSBridge.call('closeWindow');
 		//阻止网页默认动作（即网页滚动）
 	    event.preventDefault();
 		//if(event.touches[0].pageY >= can.height-can.height*0.4 || isover)return false;
