@@ -100,7 +100,6 @@ function wechatShare(){
             desc: shareData.desc,
             success: function () { 
                 // 用户确认分享后执行的回调函数
-                alert(shareData.link);
                 shareData.returnFun();
 
                 //alert('分享成功');
@@ -140,7 +139,6 @@ function editShare(){   ///
             desc: shareData.desc,
             success: function () { 
                 // 用户确认分享后执行的回调函数
-                alert(shareData.link);
                 shareData.returnFun();
 
                 //alert('分享成功');
