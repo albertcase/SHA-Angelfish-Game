@@ -78,8 +78,16 @@
 			    prevButton: '.swiper-button-prev',
 			    effect : 'cube',
 			    onSlideChangeEnd: function(swiper){
-			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!" || swiper.activeIndex == 1 && $(".doubles_owen .rankName").html() != "暂无您的数据!"){
+			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!"){
 			    		$("#replayBtn").css("display","inline-block");
+			    	}else{
+			    		$("#replayBtn").css("display","none");
+			    	}
+
+			    	if(swiper.activeIndex == 1 && $(".doubles_owen .rankName").html() != "暂无您的数据!"){
+			    		$("#replayBtn").css("display","inline-block");
+			    	}else{
+			    		$("#replayBtn").css("display","none");
 			    	}
 			    }
 			});
