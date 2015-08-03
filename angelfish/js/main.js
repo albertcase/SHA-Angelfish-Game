@@ -122,15 +122,15 @@ var ball = new Image(),
 	wine3.speed = 7;
 
 	wine4.src = "/angelfish/imgs/gift/wine5.png";
-	wine4.value = 5000;
+	wine4.value = 50;
 	wine4.speed = 7;
 
 	wine5.src = "/angelfish/imgs/gift/wine6.png";
-	wine5.value = 5000;
+	wine5.value = 50;
 	wine5.speed = 7;
 
 	wine6.src = "/angelfish/imgs/gift/wine7.png";
-	wine6.value = 5000;
+	wine6.value = 50;
 	wine6.speed = 7;
 
 	wine7.src = "/angelfish/imgs/gift/wine8.png";
@@ -232,7 +232,6 @@ var App = {
 			
 		}else{
 			countDownNum --;
-			//countDownNum == 1?countDownNum="0":countDownNum=countDownNum;
 			document.getElementById("loading_countdown").innerHTML = '<img src="/angelfish/imgs/'+countDownNum+'.png" width="100%" />';;
 			TweenMax.staggerFromTo(".loading_countdown",1,{
 	    		scale:0.1,
@@ -300,7 +299,7 @@ var App = {
 		this.context.fillText(countdownVal,this.canvas.width*0.905,27);
 
 
-		//startEvent.innerHTML="pause";
+		
 		this.context.fillStyle="transparent";
 		this.context.fillRect(0,this.canvas.height-this.canvas.height*0.4,this.canvas.width,this.canvas.height*0.4);
 
@@ -410,8 +409,6 @@ var App = {
 		this.context.font = 'bold 27px Arial';
 
 		writeTextOnCanvas(this.context,40, 18, "           Pause!   点击屏幕继续", this.canvas.width/2, this.canvas.height/2 - 90);
-		//this.context.fillText("Press click screen to continue...",this.canvas.width/2,this.canvas.height/2 + 40);
-		//startEvent.innerHTML="play";
 
 		clearInterval(setTime);
 		cdStatus = true;
@@ -448,8 +445,6 @@ var App = {
 
 		clearInterval(setTime);
 		isover = true;
-		// document.getElementById("replay").innerHTML = "再次挑战";
-		// document.getElementById("replay").style.display = "block";
 
 		window.location.href = "/site/result?fscore=" + curscore +"&gameType=" + gameType;
 
@@ -473,12 +468,7 @@ window.onload = function (){  // 进入默认状态
 	ctx.drawImage(bg,0,0,canvasWidth,canvasHeight);
 
 	ctx.drawImage(heroImg,(can.width - heroImg.width)/2,can.height - heroImg.height); //绘制笑脸
-	ctx.textAlign = "center";
-	ctx.fillStyle = "#b1ff26";
-	//ctx.font = 'bold 27px Arial';
-	//ctx.fillText("Press click screen to start...",can.width/2,can.height/2);
 
-	//writeTextOnCanvas(ctx, 40, 18, "         点击屏幕   开始你的挑战", can.width/2, can.height/2 - 80);
 	
 	// 绘制生命值及得分
 	ctx.drawImage(score,3,-8,can.width*0.6,50);
@@ -505,7 +495,6 @@ window.onload = function (){  // 进入默认状态
 
 	var readyGo = document.getElementById("readyGo");
 	readyGo.ontouchstart = function(event){
-
 		//阻止网页默认动作（即网页滚动）
 	    event.preventDefault();
 		//if(event.touches[0].pageY >= can.height-can.height*0.4 || isover)return false;
@@ -599,7 +588,6 @@ function loadingEnd(){
         force3D: false,
         onComplete:function(){
 
-
         	if($("body").attr("data-team") == "false" && getType() == 2){
 	        	$("#createTeam").show();
 				TweenMax.staggerFromTo("#createTeam",1,{
@@ -613,6 +601,7 @@ function loadingEnd(){
 					ease: Elastic.easeOut
 				},0.2)
 	        }else{
+	        	$("#readyGo").show();
 	        	TweenMax.staggerFromTo("#readyGo",0.3,{
 					scale:0.8,
 					autoAlpha:0,
@@ -623,10 +612,11 @@ function loadingEnd(){
 					opacity:1
 				},0.2)
 	        }
+
         }
     });
 
-    console.log("加载完成!");
+    //console.log("加载完成!");
 
     
 

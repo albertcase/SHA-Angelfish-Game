@@ -43,7 +43,7 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
- 	
+
  	/* rule */
 	$(".back").click(function(){
 		TweenMax.to("#rule", 0.3, {

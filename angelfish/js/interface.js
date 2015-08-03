@@ -1,9 +1,16 @@
 	//@charset "utf-8";
 
+
 	function getType(){
 		var str = window.location.pathname;
 		var pos = str.indexOf('type/');
 		return str.substring(pos+5,pos+6);
+	}
+
+	function GetQueryString(name){
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null)return unescape(r[2]); return null;
 	}
 
 
@@ -27,7 +34,32 @@
 					objImg.onload=function(){
 						loading(LoadingImg);  
 					}
+    			}else{
+
+    				if($("canvas").length > 0){
+
+    				var gTeamId = data.team;
+	    			var gt = getType();
+					if(gt == 2 && gTeamId){
+						shareData = {
+							title: '球王就是你，快来加入网球大师赛！',
+					   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+					    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+						    link: window.location.host + '/site/share/id/' + gTeamId,
+						    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
+						    returnFun: function(){
+						    	window.location.href = "/site/game/type/2"
+						    }
+						};
+						editShare();
+					}
+
+					}
+
     			}
+
+    			
+
     		}
 	    });
 	}
@@ -163,6 +195,12 @@
 
 
     islogin();
+
+
+
+
+　　
+
 
 
 

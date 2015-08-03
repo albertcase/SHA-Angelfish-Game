@@ -63,12 +63,7 @@
 </article>
 
 <script type="text/javascript">
-	function GetQueryString(name){
-		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-		var r = window.location.search.substr(1).match(reg);
-		if(r!=null)return unescape(r[2]); return null;
-	}
-
+	
 	var  curscore = GetQueryString("fscore");
 	var gt = GetQueryString("gameType");
 
@@ -99,7 +94,6 @@
 			    returnFun: function(){
 			    	submitScore(gt,curscore);
 			    	window.location.href = "/site/result?gameType=" + gt;
-			    	// href="javascript:mySwiper.slideTo(2, 600, true);"
 			    }
 			};
 

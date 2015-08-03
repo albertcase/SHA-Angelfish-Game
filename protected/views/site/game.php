@@ -33,23 +33,4 @@
 		}
 	}
 
-	var gt = getType();
-	var gTeamId = $("body").attr("data-team");
-	if(gt == 2 && gTeamId){
-		shareData = {
-			title: '球王就是你，快来加入网球大师赛！',
-	   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
-	    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
-		    link: window.location.host + '/site/share/id/' + gTeamId,
-		    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
-		    returnFun: function(){
-		    	window.location.href = "/site/game/type/2"
-		    }
-		};
-
-		editShare();
-	}
-
-
-
 </script>
