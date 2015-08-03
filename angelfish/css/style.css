@@ -221,14 +221,11 @@ body{
     bottom: -32%;
 }
 
-#attentionBtn,#replayBtn{
+.attentionBtn,.replayBtn{
 	width: 50%;
 	display: inline-block;
 }
 
-#replayBtn{
-	display: none;
-}
 
 .owen{
 	width: 86%;

@@ -20,6 +20,12 @@
 						</ul>
 						<div class="owen single_owen"></div>	
 					</div>
+
+					<div class="btnArea single_btnArea">
+						<p><a href="javascript:;" class="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
+						<p><a href="/site/game/type/1" class="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
+					</div>
+
 	            </div>
 	            <div class="swiper-slide">
 	            	<img src="/angelfish/imgs/doubles.png" class="scorebg doublesbg" width="100%" />
@@ -29,6 +35,12 @@
 						</ul>
 						<div class="owen doubles_owen"></div>		
 					</div>
+
+					<div class="btnArea doubles_btnArea">
+						<p><a href="javascript:;" class="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
+						<p><a href="/site/game/type/2" class="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
+					</div>
+
 	            </div>
 	        </div>
 	        <!-- Add Arrows -->
@@ -41,10 +53,7 @@
 	    </div>
 
 
-		<div class="btnArea">
-			<p><a href="javascript:;" id="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
-			<p><a href="/" id="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
-		</div>
+		
 
 		
 	</div>
@@ -76,20 +85,7 @@
 			var swiper = new Swiper('.swiper-container', {
 			    nextButton: '.swiper-button-next',
 			    prevButton: '.swiper-button-prev',
-			    effect : 'cube',
-			    onSlideChangeEnd: function(swiper){
-			    	if(swiper.activeIndex == 0 && $(".single_owen .rankName").html() != "暂无您的数据!"){
-			    		$("#replayBtn").css("display","inline-block");
-			    	}else{
-			    		$("#replayBtn").css("display","none");
-			    	}
-
-			    	if(swiper.activeIndex == 1 && $(".doubles_owen .rankName").html() != "暂无您的数据!"){
-			    		$("#replayBtn").css("display","inline-block");
-			    	}else{
-			    		$("#replayBtn").css("display","none");
-			    	}
-			    }
+			    effect : 'cube'
 			});
 
 			if(gt == 2){
