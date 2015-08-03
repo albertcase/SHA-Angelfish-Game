@@ -589,7 +589,6 @@ function loadingEnd(){
         force3D: false,
         onComplete:function(){
 
-
         	if($("body").attr("data-team") == "false" && getType() == 2){
 	        	$("#createTeam").show();
 				TweenMax.staggerFromTo("#createTeam",1,{
@@ -603,6 +602,7 @@ function loadingEnd(){
 					ease: Elastic.easeOut
 				},0.2)
 	        }else{
+	        	$("#readyGo").show();
 	        	TweenMax.staggerFromTo("#readyGo",0.3,{
 					scale:0.8,
 					autoAlpha:0,
@@ -613,10 +613,11 @@ function loadingEnd(){
 					opacity:1
 				},0.2)
 	        }
+
         }
     });
 
-    console.log("加载完成!");
+    //console.log("加载完成!");
 
     
 

@@ -412,6 +412,7 @@ body{
 	margin: 0 0 0 -40%;
 	z-index: 2;
 	opacity: 0;
+	display: none;
 }
 
 #startbtn{
