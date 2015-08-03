@@ -39,7 +39,7 @@ class SiteController extends Controller
 		$rs = $db->createCommand($sql)->select()->queryScalar();
 		if ($rs) {
 			//print json_encode(array('code' => 3, 'msg' => '已经有战队了'));
-			Header('Location: /');
+			Header('Location: /site/game/type/2');
 			Yii::app()->end();
 		}
 
@@ -47,7 +47,7 @@ class SiteController extends Controller
 		$rs = $db->createCommand($sql)->select()->queryRow();
 		if ($rs['fid']) {
 			//print json_encode(array('code' => 4, 'msg' => '战队已满'));
-			Header('Location: /');
+			Header('Location: /site/game/type/2');
 			Yii::app()->end();
 		}
 
