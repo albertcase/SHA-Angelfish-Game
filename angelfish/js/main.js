@@ -79,31 +79,31 @@ var ball = new Image(),
 
 	ball.src = "/angelfish/imgs/gift/ball.png";
 	ball.value = 15;
-	ball.speed = 12;
+	ball.speed = 5;
 
 	fish0.src = "/angelfish/imgs/gift/fish1.png";
 	fish0.value = -15;
-	fish0.speed = 5;
+	fish0.speed = 12;
 
 	fish1.src = "/angelfish/imgs/gift/fish2.png";
 	fish1.value = -15;
-	fish1.speed = 5;
+	fish1.speed = 9;
 
 	fish2.src = "/angelfish/imgs/gift/fish3.png";
 	fish2.value = -15;
-	fish2.speed = 5;
+	fish2.speed = 10;
 
 	fish3.src = "/angelfish/imgs/gift/fish4.png";
 	fish3.value = -15;
-	fish3.speed = 5;
+	fish3.speed = 11;
 
 	fish4.src = "/angelfish/imgs/gift/fish5.png";
 	fish4.value = -15;
-	fish4.speed = 5;
+	fish4.speed = 12;
 
 	fish5.src = "/angelfish/imgs/gift/fish6.png";
 	fish5.value = -15;
-	fish5.speed = 5;
+	fish5.speed = 10;
 
 	wine0.src = "/angelfish/imgs/gift/wine1.png";
 	wine0.value = 50;
