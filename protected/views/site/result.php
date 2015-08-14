@@ -75,7 +75,6 @@
 	
 	var  curscore = GetQueryString("fscore");
 	var gt = GetQueryString("gameType");
-
 	function loadingEndDoing(){
 		if(!curscore){ 
 			scoreList("1");
