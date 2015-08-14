@@ -19,7 +19,7 @@ class ApiController extends Controller
 		$sql = "SELECT * FROM `same_game_team` WHERE `uid` = '". intval($_SESSION['weixin_info_id']).
 			 "' or `fid` = '". intval($_SESSION['weixin_info_id'])."'";
 		$rs = Yii::app()->db->createCommand($sql)->select()->queryRow();
-		$teamid = null;
+		$teamid = false;
 		$teamname = '';
 		if ($rs) {
 			$teamid = $rs['id'];
