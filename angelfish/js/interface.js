@@ -43,7 +43,7 @@
 	    			var gt = getType();
 					if(gt == 2 && gTeamId){
 						shareData = {
-							title: 'a球王就是你，'+data.teamname+'邀你加入网球大师赛',
+							title: '球王就是你，'+data.teamname+'邀你加入网球大师赛',
 					   		desc: '您的好友邀您加入TA的'+data.teamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
 					    	descTimeline: '您的好友邀您加入TA的'+data.teamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
 						    link: window.location.host + '/site/share/id/' + gTeamId,
