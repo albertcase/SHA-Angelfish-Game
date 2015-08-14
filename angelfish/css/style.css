@@ -203,7 +203,8 @@ body{
 .rankli > div.rankName{
 	width: 55%;
 	margin: 2.5% 0 0 0;
-	font-size: 14px;
+	font-size: 13px;
+	overflow: hidden;
 }
 
 .rankli > div.rankScore{
