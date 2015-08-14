@@ -23,7 +23,8 @@ class ApiController extends Controller
 		$teamname = '';
 		if ($rs) {
 			$teamid = $rs['id'];
-			$teamname = $rs['name'];
+			$name = json_decode($rs['name'], true);
+			$teamname = $name['name'];
 		}
 		print json_encode(array('code' => 1, 'msg' => $userInfo, 'team' => $teamid, 'teamname' => $teamname));
 		Yii::app()->end();
