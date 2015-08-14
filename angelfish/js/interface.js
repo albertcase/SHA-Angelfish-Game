@@ -27,6 +27,8 @@
     			window.location.href="/weixin/oauth?callback="+window.location.href;
     			//alert("未登录");
     		}else{
+    			alert(data.team);
+    			alert(data.teamname);
     			$("body").attr("data-team",data.team); //是否已经有团队
     			if($("#loading").length > 0){
     				var objImg=new Image();
