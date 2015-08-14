@@ -16,10 +16,16 @@ class ApiController extends Controller
 		$sql = "SELECT * FROM `same_weixin_info` WHERE `id` = '". intval($_SESSION['weixin_info_id'])."'";
 		$userInfo = Yii::app()->db->createCommand($sql)->select()->queryRow();
 
-		$sql = "SELECT id FROM `same_game_team` WHERE `uid` = '". intval($_SESSION['weixin_info_id']).
+		$sql = "SELECT * FROM `same_game_team` WHERE `uid` = '". intval($_SESSION['weixin_info_id']).
 			 "' or `fid` = '". intval($_SESSION['weixin_info_id'])."'";
-		$rs = Yii::app()->db->createCommand($sql)->select()->queryScalar();
-		print json_encode(array('code' => 1, 'msg' => $userInfo, 'team' => $rs));
+		$rs = Yii::app()->db->createCommand($sql)->select()->queryRow();
+		$teamid = null;
+		$teamname = '';
+		if ($rs) {
+			$teamid = $rs['id'];
+			$teamname = $rs['name'];
+		}
+		print json_encode(array('code' => 1, 'msg' => $userInfo, 'team' => $teamid, 'teamname' => $teamname));
 		Yii::app()->end();
 	}
 
