@@ -50,7 +50,7 @@ function writeTextOnCanvas(ctx, lh, rw, text, text_x, text_y){  // rw 字符长�
 var canvasWidth,
 	canvasHeight,
 	startEvent,
-	countdownVal = 30,
+	countdownVal = 60,
 	setTime,
 	cdStatus = true,
 	isover = false,
@@ -79,63 +79,63 @@ var ball = new Image(),
 
 	ball.src = "/angelfish/imgs/gift/ball.png";
 	ball.value = 15;
-	ball.speed = 12;
+	ball.speed = 15;
 
 	fish0.src = "/angelfish/imgs/gift/fish1.png";
-	fish0.value = -15;
-	fish0.speed = 12;
+	fish0.value = -30;
+	fish0.speed = 15;
 
 	fish1.src = "/angelfish/imgs/gift/fish2.png";
-	fish1.value = -15;
-	fish1.speed = 9;
+	fish1.value = -30;
+	fish1.speed = 14;
 
 	fish2.src = "/angelfish/imgs/gift/fish3.png";
-	fish2.value = -15;
-	fish2.speed = 10;
+	fish2.value = -30;
+	fish2.speed = 16;
 
 	fish3.src = "/angelfish/imgs/gift/fish4.png";
-	fish3.value = -15;
-	fish3.speed = 11;
+	fish3.value = -30;
+	fish3.speed = 13;
 
 	fish4.src = "/angelfish/imgs/gift/fish5.png";
-	fish4.value = -15;
+	fish4.value = -30;
 	fish4.speed = 12;
 
 	fish5.src = "/angelfish/imgs/gift/fish6.png";
-	fish5.value = -15;
-	fish5.speed = 10;
+	fish5.value = -30;
+	fish5.speed = 13;
 
 	wine0.src = "/angelfish/imgs/gift/wine1.png";
 	wine0.value = 50;
-	wine0.speed = 7;
+	wine0.speed = 12;
 
 	wine1.src = "/angelfish/imgs/gift/wine2.png";
 	wine1.value = 50;
-	wine1.speed = 7;
+	wine1.speed = 12;
 
 	wine2.src = "/angelfish/imgs/gift/wine3.png";
 	wine2.value = 50;
-	wine2.speed = 7;
+	wine2.speed = 11;
 
 	wine3.src = "/angelfish/imgs/gift/wine4.png";
 	wine3.value = 50;
-	wine3.speed = 7;
+	wine3.speed = 11;
 
 	wine4.src = "/angelfish/imgs/gift/wine5.png";
 	wine4.value = 50;
-	wine4.speed = 7;
+	wine4.speed = 12;
 
 	wine5.src = "/angelfish/imgs/gift/wine6.png";
 	wine5.value = 50;
-	wine5.speed = 7;
+	wine5.speed = 13;
 
 	wine6.src = "/angelfish/imgs/gift/wine7.png";
 	wine6.value = 50;
-	wine6.speed = 7;
+	wine6.speed = 10;
 
 	wine7.src = "/angelfish/imgs/gift/wine8.png";
 	wine7.value = 50;
-	wine7.speed = 7;
+	wine7.speed = 12;
 
 
 

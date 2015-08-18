@@ -45,7 +45,7 @@ var LoadingImg = [
 	"/angelfish/imgs/readyCon.png",
 	"/angelfish/imgs/replay.png",
 	"/angelfish/imgs/rule.jpg",
-	"/angelfish/imgs/share.png",
+	"/angelfish/imgs/share.jpg",
 	"/angelfish/imgs/single.png",
 	"/angelfish/imgs/telBtn.png",
 	"/angelfish/imgs/timesup.png",

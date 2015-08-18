@@ -5,7 +5,7 @@ var shareData = {
     desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
     descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
     link: window.location.host,
-    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
+    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
     returnFun: function(){
 
     }
