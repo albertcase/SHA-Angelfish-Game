@@ -79,7 +79,7 @@ var ball = new Image(),
 
 	ball.src = "/angelfish/imgs/gift/ball.png";
 	ball.value = 15;
-	ball.speed = 20;
+	ball.speed = 24;
 
 	fish0.src = "/angelfish/imgs/gift/fish1.png";
 	fish0.value = -30;
