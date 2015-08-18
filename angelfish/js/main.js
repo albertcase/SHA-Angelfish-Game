@@ -327,11 +327,11 @@ var App = {
 			var creatImgNum;   // 1为 80%; 2为18%; 0为2%;  0:球，1:鱼，2:酒
 			var img;
 			var imgRandom;
-			if(probability <= 80){
+			if(probability <= 70){
 				creatImgNum = 0;
 				imgRandom = parseInt(0*Math.random());
 				img = me.imgs.ball[imgRandom];
-			}else if(probability > 80 && probability <= 90){
+			}else if(probability > 70 && probability <= 90){
 				creatImgNum = 1;
 				imgRandom = parseInt(5*Math.random());
 				img = me.imgs.fish[imgRandom];
