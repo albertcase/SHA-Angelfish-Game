@@ -322,7 +322,7 @@ var App = {
 		}
 		var chance = Math.random() * 1000;
 		// 1/10的对象添加概率
-		if(chance < 100){
+		if(chance < 1000){
 			var probability = parseInt(100*Math.random());
 			var creatImgNum;   // 1为 80%; 2为18%; 0为2%;  0:球，1:鱼，2:酒
 			var img;
@@ -352,7 +352,7 @@ var App = {
 			var y = 0;
 			var speed = img.speed;
 			var money = new Money(x,y,speed,img);
-			if(me.elements.length < 25){
+			if(me.elements.length < 30){
 				me.addElement(money);
 			};				
 		}
