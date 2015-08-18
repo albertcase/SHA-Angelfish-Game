@@ -83,11 +83,11 @@ var ball = new Image(),
 
 	fish0.src = "/angelfish/imgs/gift/fish1.png";
 	fish0.value = -30;
-	fish0.speed = 15;
+	fish0.speed = 19;
 
 	fish1.src = "/angelfish/imgs/gift/fish2.png";
 	fish1.value = -30;
-	fish1.speed = 14;
+	fish1.speed = 17;
 
 	fish2.src = "/angelfish/imgs/gift/fish3.png";
 	fish2.value = -30;
@@ -95,43 +95,43 @@ var ball = new Image(),
 
 	fish3.src = "/angelfish/imgs/gift/fish4.png";
 	fish3.value = -30;
-	fish3.speed = 13;
+	fish3.speed = 18;
 
 	fish4.src = "/angelfish/imgs/gift/fish5.png";
 	fish4.value = -30;
-	fish4.speed = 12;
+	fish4.speed = 18;
 
 	fish5.src = "/angelfish/imgs/gift/fish6.png";
 	fish5.value = -30;
-	fish5.speed = 13;
+	fish5.speed = 19;
 
 	wine0.src = "/angelfish/imgs/gift/wine1.png";
 	wine0.value = 50;
-	wine0.speed = 12;
+	wine0.speed = 15;
 
 	wine1.src = "/angelfish/imgs/gift/wine2.png";
 	wine1.value = 50;
-	wine1.speed = 12;
+	wine1.speed = 14;
 
 	wine2.src = "/angelfish/imgs/gift/wine3.png";
 	wine2.value = 50;
-	wine2.speed = 11;
+	wine2.speed = 12;
 
 	wine3.src = "/angelfish/imgs/gift/wine4.png";
 	wine3.value = 50;
-	wine3.speed = 11;
+	wine3.speed = 13;
 
 	wine4.src = "/angelfish/imgs/gift/wine5.png";
 	wine4.value = 50;
-	wine4.speed = 12;
+	wine4.speed = 14;
 
 	wine5.src = "/angelfish/imgs/gift/wine6.png";
 	wine5.value = 50;
-	wine5.speed = 13;
+	wine5.speed = 15;
 
 	wine6.src = "/angelfish/imgs/gift/wine7.png";
 	wine6.value = 50;
-	wine6.speed = 10;
+	wine6.speed = 14;
 
 	wine7.src = "/angelfish/imgs/gift/wine8.png";
 	wine7.value = 50;
