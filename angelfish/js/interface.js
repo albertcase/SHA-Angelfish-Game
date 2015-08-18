@@ -47,7 +47,7 @@
 					   		desc: '您的好友邀您加入TA的'+data.teamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
 					    	descTimeline: '您的好友邀您加入TA的'+data.teamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
 						    link: window.location.host + '/site/share/id/' + gTeamId,
-						    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
+						    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
 						    returnFun: function(){
 						    	window.location.href = "/site/game/type/2"
 						    }
@@ -92,7 +92,7 @@
 			   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
 			    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
 				    link: window.location.host + '/site/share/id/' + data.msg,
-				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
+				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
 				    returnFun: function(){
 				    	window.location.href = "/site/game/type/2"
 				    }
