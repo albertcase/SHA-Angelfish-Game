@@ -22,8 +22,8 @@
 					</div>
 
 					<div class="btnArea single_btnArea">
-						<p><a href="http://mp.weixin.qq.com/s?__biz=MzAxMzYzNDk0NQ==&mid=214589606&idx=1&sn=fd4b37b8cd6b7b70d25904b9c5645c99&scene=1&key=dffc561732c22651cbcc4f3be8c3a0234e34dc707bc1dd5f4dc9608f86c04a971f7a9ddfe1845ae2f59c10168f797482&ascene=1&uin=MjE2MTM5OTIw&devicetype=Windows+7&version=61020019&pass_ticket=u05cTItgMVJ5KRisxWM%2F%2FUWIgVXbUDpGYGIZlVVtx38%3D" class="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
-						<p><a href="/site/game/type/1" class="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
+						<a href="http://mp.weixin.qq.com/s?__biz=MzAxMzYzNDk0NQ==&mid=214589606&idx=1&sn=fd4b37b8cd6b7b70d25904b9c5645c99&scene=1&key=dffc561732c22651cbcc4f3be8c3a0234e34dc707bc1dd5f4dc9608f86c04a971f7a9ddfe1845ae2f59c10168f797482&ascene=1&uin=MjE2MTM5OTIw&devicetype=Windows+7&version=61020019&pass_ticket=u05cTItgMVJ5KRisxWM%2F%2FUWIgVXbUDpGYGIZlVVtx38%3D" class="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a>
+						<a href="/site/game/type/1" class="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a>
 					</div>
 
 	            </div>
@@ -37,8 +37,8 @@
 					</div>
 
 					<div class="btnArea doubles_btnArea">
-						<p><a href="http://mp.weixin.qq.com/s?__biz=MzAxMzYzNDk0NQ==&mid=214589606&idx=1&sn=fd4b37b8cd6b7b70d25904b9c5645c99&scene=1&key=dffc561732c22651cbcc4f3be8c3a0234e34dc707bc1dd5f4dc9608f86c04a971f7a9ddfe1845ae2f59c10168f797482&ascene=1&uin=MjE2MTM5OTIw&devicetype=Windows+7&version=61020019&pass_ticket=u05cTItgMVJ5KRisxWM%2F%2FUWIgVXbUDpGYGIZlVVtx38%3D" class="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a></p>
-						<p><a href="/site/game/type/2" class="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a></p>
+						<a href="http://mp.weixin.qq.com/s?__biz=MzAxMzYzNDk0NQ==&mid=214589606&idx=1&sn=fd4b37b8cd6b7b70d25904b9c5645c99&scene=1&key=dffc561732c22651cbcc4f3be8c3a0234e34dc707bc1dd5f4dc9608f86c04a971f7a9ddfe1845ae2f59c10168f797482&ascene=1&uin=MjE2MTM5OTIw&devicetype=Windows+7&version=61020019&pass_ticket=u05cTItgMVJ5KRisxWM%2F%2FUWIgVXbUDpGYGIZlVVtx38%3D" class="attentionBtn"><img src="/angelfish/imgs/attentionBtn.png" width="100%" /></a>
+						<a href="/site/game/type/2" class="replayBtn"><img src="/angelfish/imgs/replay.png" width="100%" /></a>
 					</div>
 
 	            </div>

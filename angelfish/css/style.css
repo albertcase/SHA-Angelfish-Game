@@ -223,8 +223,9 @@ body{
     bottom: -32%;
 }
 
+
 .attentionBtn,.replayBtn{
-	width: 50%;
+	width: 46%;
 	display: inline-block;
 }
 
