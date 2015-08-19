@@ -1,7 +1,7 @@
 <script type="text/javascript" src="/angelfish/js/swiper.min.js"></script>
 
 <div id="wechat">
-	<img src="/angelfish/imgs/wechat_tips.png" />
+	<img src="/angelfish/imgs/wechat_tips2.png" />
 </div>
 
 
