@@ -445,11 +445,13 @@ body{
 	display: none; 
 }
 
-@media screen and (min-aspect-ratio: 13/9) { 
+/*@media screen and (min-aspect-ratio: 13/9) { 
     #orientLayer { 
     	display: block; 
     } 
 }
+*/
+
 .mod-orient-layer { 
 	display: none; 
 	position: fixed; 
