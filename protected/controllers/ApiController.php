@@ -208,4 +208,35 @@ class ApiController extends Controller
 		print json_encode(array('code' => 1, 'msg' => $scoreList, 'ranking'=> $num + 1, 'nickname' => $nickname, 'score' => $user['score']));
 		Yii::app()->end();
 	}
+
+	public function actionScore()
+	{
+		if (!isset($_SESSION['weixin_info_id'])) {
+			print json_encode(array('code' => 0, 'msg' => '未登录'));
+			Yii::app()->end();
+		}
+		$tag = false;
+		$score = isset($_POST['score']) ? intval($_POST['score']) : $tag = true;
+		$type = isset($_POST['type']) ? intval($_POST['type']) : $tag = true;
+		if ($tag) {
+			print json_encode(array('code' => 2, 'msg' => '非法提交'));
+			Yii::app()->end();
+		}
+		$_SESSION['user_score'] = $score;
+		$_SESSION['user_type'] = $type;
+		print json_encode(array('code' => 1, 'msg' => '提交成功'));
+		Yii::app()->end();
+	}
+
+	public function actionGetscore()
+	{
+		if (!isset($_SESSION['weixin_info_id'])) {
+			print json_encode(array('code' => 0, 'msg' => '未登录'));
+			Yii::app()->end();
+		}
+		$score = $_SESSION['user_score'];
+		$type = $_SESSION['user_type'];
+		print json_encode(array('code' => 1, 'score' => $score, 'type'=> $type));
+		Yii::app()->end();
+	}
 }
