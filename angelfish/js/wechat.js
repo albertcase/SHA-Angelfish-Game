@@ -88,7 +88,7 @@ function wechatShare(){
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-                // alert("分享失败")
+                alert("分享失败")
             }
         });
         
@@ -106,7 +106,7 @@ function wechatShare(){
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-               // alert("分享失败")
+                alert("分享失败")
             }
         });
   })
@@ -127,7 +127,7 @@ function editShare(){   ///
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-                // alert("分享失败")
+                alert("分享失败")
             }
         });
         
@@ -145,7 +145,7 @@ function editShare(){   ///
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-               // alert("分享失败")
+                alert("分享失败")
             }
         });
 }
