@@ -1,3 +1,8 @@
+<style type="text/css">
+	html,body{
+		overflow: hidden;
+	}
+</style>
 
 <div id="wechat">
 	<img src="/angelfish/imgs/wechat_tips.png" />
