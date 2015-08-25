@@ -87,19 +87,20 @@
     			alert("站队名已经存在");
     		}else{
     			//创建成功
-    			$("#wechat").fadeIn();
-				shareData = {
-					title: '球王就是你，快来加入网球大师赛！',
-			   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
-			    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
-				    link: window.location.host + '/site/share/id/' + data.msg,
-				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
-				    returnFun: function(){
-				    	window.location.href = "/site/game/type/2"
-				    }
-				};
+  
+				// shareData = {
+				// 	title: '球王就是你，快来加入网球大师赛！',
+			 //   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+			 //    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
+				//     link: window.location.host + '/site/share/id/' + data.msg,
+				//     imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
+				//     returnFun: function(){
+				//     	window.location.href = "/site/game/type/2"
+				//     }
+				// };
+				// editShare();
 
-				editShare();
+				window.location.href = "/site/game/type/2"	
     		}
 	    });
 	}
@@ -145,7 +146,8 @@
     			window.location.href="/weixin/oauth?callback="+window.location.href;
     			//alert("未登录");
     		}else{
-    			alert(_score)
+    			window.location.href = "/site/result?islist=" + x;
+    			//alert(_score)
     		}
 	    });
 	}

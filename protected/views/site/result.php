@@ -72,23 +72,32 @@
 </article>
 
 <script type="text/javascript">
-	var  curscore,gt;
-	$.ajax({
-	    type: "GET",
-	    url: "/api/getscore",  //X 1为单人，2为双人
-	    dataType:"json"
-    }).done(function(data){
-    	curscore = data.score;
-		gt = data.type;
-		alert(curscore);
+	var  curscore,gt,islist = GetQueryString("islist");
+
+	if(islist){
 		loadingEnd();
-    })
+	}else{
+		$.ajax({
+		    type: "GET",
+		    url: "/api/getscore",  //X 1为单人，2为双人
+		    dataType:"json"
+	    }).done(function(data){
+	    	var defaultScore = "00000"; 
+			curscore = String(data.score);
+	     	curscore = defaultScore.substring(0, defaultScore.length- curscore.length) + curscore; 
+
+	     	gt = data.type;
+			loadingEnd();
+	    })
+	}
+	
 	
 
 	// var  curscore = GetQueryString("fscore");
 	// var gt = GetQueryString("gameType");
+
 	function loadingEndDoing(){
-		if(!curscore){ 
+		if(islist){ 
 			scoreList("1");
 			scoreList("2");
 			$(".scoreList").show();
@@ -99,8 +108,8 @@
 			    effect : 'cube'
 			});
 
-			if(gt == 2){
-				swiper.slideTo(gt, 600, true);
+			if(islist == 2){
+				swiper.slideTo(islist, 600, true);
 			}
 		}else{
 
@@ -113,7 +122,6 @@
 			    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
 			    returnFun: function(){
 			    	submitScore(gt,curscore);
-			    	window.location.href = "/site/result?gameType=" + gt;
 			    }
 			};
 
@@ -129,7 +137,8 @@
 				autoAlpha:1,
 				opacity:1,
 				ease: Elastic.easeOut
-			},0.3)
+			},0.3);
+
 			$("#finalScore li").each(function(k){
 		   		$(this).html(curscore[k]);
 		   	})

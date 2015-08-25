@@ -31,7 +31,7 @@
 			</a>
 		</div>
 
-		<a href="/site/result" class="playersRanking_link">
+		<a href="/site/result?islist=1" class="playersRanking_link">
 			<img src="" sourcesrc="/angelfish/imgs/playersRanking.png" width="100%" />
 		</a>
 		<a href="javascript:;" class="rule_link">

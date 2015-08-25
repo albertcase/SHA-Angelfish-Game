@@ -26,10 +26,29 @@
 
 	function submitTeamname(){
 		var createTeamname = $("#teamname").val();
+		var gTeamId = $("body").attr("data-team");
+	    var gt = getType();
+
 		if(createTeamname == "") {
 			alert("团队名字不能为空！");
 		}else{
-			createTeam(createTeamname);
+			
+			$("#wechat").fadeIn();
+			if(gt == 2 && !gTeamId){
+				shareData = {
+					title: '球王就是你，'+createTeamname+'邀你加入网球大师赛',
+			   		desc: '您的好友邀您加入TA的'+createTeamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
+			    	descTimeline: '您的好友邀您加入TA的'+createTeamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
+				    link: window.location.host + '/site/share/id/' + gTeamId,
+				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
+				    returnFun: function(){
+				    	createTeam(createTeamname);
+				    }
+				};
+				editShare();
+			}
+
+
 		}
 	}
 

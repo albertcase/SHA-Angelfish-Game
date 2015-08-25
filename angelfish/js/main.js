@@ -190,6 +190,9 @@ Hero.prototype = {
 		if(	this.x + this.width > other.x && this.x < other.x + other.width && 
 			this.y + this.height > other.y && this.y < other.y + other.height -35 ){
 			this.grade += other.value;
+			if(this.grade<0){
+				this.grade = 0;
+			}
 			return true;
 		}
 		//return false;
@@ -277,6 +280,7 @@ var App = {
 
 		
 		var defaultScore = "00000"; 
+
 		curscore = String(this.hero.grade);
      	curscore = defaultScore.substring(0, defaultScore.length- curscore.length) + curscore; 
 
@@ -450,7 +454,7 @@ var App = {
 		    type: "POST",
 		    url: "/api/score",  //X 1为单人，2为双人
 		    data: {
-		    	"score": curscore, "type": gameType
+		    	"score": curscore.toString(), "type": gameType
 		    },
 		    dataType:"json"
 	    }).done(function(data){
