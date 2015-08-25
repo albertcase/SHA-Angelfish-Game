@@ -513,7 +513,7 @@ body{
 	}
 
 	#finalScore{
-		margin: -380px 0 0 -48%;
+		margin: -350px 0 0 -48%;
 	}
 
 	#finalScore ul{
@@ -548,6 +548,12 @@ body{
 	}
 }
 
+/* 5 */
+@media handheld and (min-height: 490px), screen and (max-height: 510px) {
+    #finalScore{
+		margin: -270px 0 0 -48%;
+	}
+}
 
 
 
