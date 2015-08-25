@@ -72,9 +72,21 @@
 </article>
 
 <script type="text/javascript">
+	var  curscore,gt;
+	$.ajax({
+	    type: "GET",
+	    url: "/api/getscore",  //X 1为单人，2为双人
+	    dataType:"json"
+    }).done(function(data){
+    	curscore = data.score;
+		gt = data.type;
+		alert(curscore);
+		loadingEnd();
+    })
 	
-	var  curscore = GetQueryString("fscore");
-	var gt = GetQueryString("gameType");
+
+	// var  curscore = GetQueryString("fscore");
+	// var gt = GetQueryString("gameType");
 	function loadingEndDoing(){
 		if(!curscore){ 
 			scoreList("1");
@@ -161,7 +173,6 @@
 	}
 
 
-	loadingEnd();
 
 
 

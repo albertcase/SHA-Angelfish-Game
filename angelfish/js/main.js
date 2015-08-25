@@ -446,7 +446,18 @@ var App = {
 		clearInterval(setTime);
 		isover = true;
 
-		window.location.href = "/site/result?fscore=" + curscore +"&gameType=" + gameType;
+		$.ajax({
+		    type: "POST",
+		    url: "/api/score",  //X 1为单人，2为双人
+		    data: {
+		    	"score": curscore, "type": gameType
+		    },
+		    dataType:"json"
+	    }).done(function(data){
+	    	window.location.href = "/site/result";
+	    })
+		
+
 
 	},
 	// 添加对象
