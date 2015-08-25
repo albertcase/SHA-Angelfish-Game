@@ -27,7 +27,7 @@
 	function submitTeamname(){
 		var createTeamname = $("#teamname").val();
 		if(createTeamname == "") {
-			alert("团队名字不能为空！")
+			alert("团队名字不能为空！");
 		}else{
 			createTeam(createTeamname);
 		}

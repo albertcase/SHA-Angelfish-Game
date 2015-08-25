@@ -41,6 +41,7 @@
 
     				var gTeamId = data.team;
 	    			var gt = getType();
+
 					if(gt == 2 && gTeamId){
 						shareData = {
 							title: '球王就是你，'+data.teamname+'邀你加入网球大师赛',
