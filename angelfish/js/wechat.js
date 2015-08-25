@@ -88,7 +88,8 @@ function wechatShare(){
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-                alert("分享失败")
+                shareData.returnFun();
+                //alert("分享失败")
             }
         });
         
@@ -101,12 +102,12 @@ function wechatShare(){
             success: function () { 
                 // 用户确认分享后执行的回调函数
                 shareData.returnFun();
-
                 //alert('分享成功');
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-                alert("分享失败")
+                shareData.returnFun();
+                //alert("分享失败")
             }
         });
   })
@@ -127,7 +128,8 @@ function editShare(){   ///
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-                alert("分享失败")
+                shareData.returnFun();
+                //alert("分享失败")
             }
         });
         
@@ -140,12 +142,12 @@ function editShare(){   ///
             success: function () { 
                 // 用户确认分享后执行的回调函数
                 shareData.returnFun();
-
                 //alert('分享成功');
             },
             cancel: function () { 
                 // 用户取消分享后执行的回调函数
-                alert("分享失败")
+                shareData.returnFun();
+                //alert("分享失败")
             }
         });
 }
