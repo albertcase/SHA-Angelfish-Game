@@ -27,8 +27,7 @@
     			window.location.href="/weixin/oauth?callback="+window.location.href;
     			//alert("未登录");
     		}else{
-    			alert(data.team);
-    			alert(data.teamname);
+
     			$("body").attr("data-team",data.team); //是否已经有团队
     			if($("#loading").length > 0){
     				var objImg=new Image();
@@ -42,13 +41,14 @@
 
     				var gTeamId = data.team;
 	    			var gt = getType();
+
 					if(gt == 2 && gTeamId){
 						shareData = {
-							title: 'a球王就是你，'+data.teamname+'邀你加入网球大师赛',
+							title: '球王就是你，'+data.teamname+'邀你加入网球大师赛',
 					   		desc: '您的好友邀您加入TA的'+data.teamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
 					    	descTimeline: '您的好友邀您加入TA的'+data.teamname+'战队，一起赢取大师杯门票和百瓶葡萄酒。',
 						    link: window.location.host + '/site/share/id/' + gTeamId,
-						    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
+						    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
 						    returnFun: function(){
 						    	window.location.href = "/site/game/type/2"
 						    }
@@ -93,7 +93,7 @@
 			   		desc: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
 			    	descTimeline: '您的好友邀您征战大师杯，快来赢取大师杯门票和百瓶葡萄酒吧！',
 				    link: window.location.host + '/site/share/id/' + data.msg,
-				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.png',
+				    imgUrl: 'http://' + window.location.host + '/angelfish/imgs/share.jpg',
 				    returnFun: function(){
 				    	window.location.href = "/site/game/type/2"
 				    }

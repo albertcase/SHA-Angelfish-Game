@@ -44,6 +44,37 @@
 	    </div>
 	</div>
 
+
+	<script type="text/javascript">
+		
+		/* 横屏 js */
+
+		function orientationChange() {
+		switch(window.orientation) {
+		　　case 0:
+		document.getElementById('orientLayer').style.display="none";
+		break;
+		　　case -90:
+		document.getElementById('orientLayer').style.display="block";
+		break;
+		　　case 90:
+		document.getElementById('orientLayer').style.display="block";
+		break;
+		　　case 180:
+		　　document.getElementById('orientLayer').style.display="none";
+		　　break;
+		};
+
+		};
+
+
+		addEventListener('load', function(){
+			orientationChange();
+			window.onorientationchange = orientationChange;
+		});
+
+	</script>
+
 </body>
 </html>
 

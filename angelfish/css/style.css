@@ -203,7 +203,9 @@ body{
 .rankli > div.rankName{
 	width: 55%;
 	margin: 2.5% 0 0 0;
-	font-size: 14px;
+	font-size: 12px;
+	overflow: hidden;
+	height: 18px;
 }
 
 .rankli > div.rankScore{
@@ -218,11 +220,12 @@ body{
 	width: 100%;
 	position: absolute;
     left: 0;
-    bottom: -32%;
+    bottom: -18%;
 }
 
+
 .attentionBtn,.replayBtn{
-	width: 50%;
+	width: 46%;
 	display: inline-block;
 }
 
@@ -442,11 +445,13 @@ body{
 	display: none; 
 }
 
-@media screen and (min-aspect-ratio: 13/9) { 
+/*@media screen and (min-aspect-ratio: 13/9) { 
     #orientLayer { 
     	display: block; 
     } 
 }
+*/
+
 .mod-orient-layer { 
 	display: none; 
 	position: fixed; 
